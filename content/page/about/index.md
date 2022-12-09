@@ -1,13 +1,13 @@
 ---
 title: About
-description: Hugo, the world's fastest framework for building websites
-date: '2019-02-28'
+description: 本ブログについての説明 
+date: '2022-12-09'
 aliases:
   - about-us
   - about-hugo
   - contact
 license: CC BY-NC-ND
-lastmod: '2020-10-09'
+lastmod: '2022-12-09'
 menu:
     main: 
         weight: -90
@@ -15,20 +15,16 @@ menu:
             icon: user
 ---
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+## このブログについて
+　本ブログは、筆者が「技術的なこと」・「やってみたこと」などを残しておくための備忘録的サイトです。学生の頃から参考書やクラウドサービスの無料枠をうまく使いながら色々やっていましたが、イマイチ自分の身になっている感じがしませんでした。その原因として、やったことをアウトプットしていないからではないかと感じました。そこで、本ブログをアウトプットの場として活用していこうと考えました。(これが正解かわかりませんが...)
+<br>  
+このブログで大切にしたいのは再現性です。(突然の決意表明)  
+自分がなにかを触って見る際も色々なサイトを参考にしていますが、手順通りに進めても異なる結果になり苦労した経験があります。人によって開発環境が異なるため、すべての人にとって再現性のある記事にはならないかもしれませんが、なるべく手順を詳細かつ正確に記載していきたいと思います。  
+<br>
+不定期更新。気長にやっていこうと思います。
+<br>
+## 筆者について
+社会人。学生時代からプログラミングによるものづくりが好きで勉強していました。  
+現在興味があるものはWPF・Python・3Dプリンタなど...。  
 
-Hugo makes use of a variety of open source projects including:
 
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
-
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
-
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
-
-Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).

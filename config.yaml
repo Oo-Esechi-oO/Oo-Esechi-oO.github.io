@@ -52,7 +52,7 @@ params:
         avatar:
             enabled: true
             local: false
-            src: img/avatar.png
+            src: /img/avatar.png
 
     article:
         math: true
@@ -166,7 +166,7 @@ params:
         opengraph:
             enabled: false
             local: false
-            src:
+            src: img/avatar.png
 
     colorScheme:
         # Display toggle
