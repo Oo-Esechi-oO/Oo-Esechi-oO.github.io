@@ -1,12 +1,12 @@
 ---
-title: {{ replace .Name "-" " " | title }}
-description:
+title: ""
+description: ""
 slug: {{ .Name }}
 date: {{ .Date }}
-categories:
+categories: []
     -
-tags: []
+tags: ["",""]
 
-draft: true
+draft: false
 ---
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>えせちの作業部屋</title>
-        <link>https://Oo-Esechi-oO.github.io/</link>
-        <description>Recent content on えせちの作業部屋</description>
+        <title>自作PC on えせちの作業部屋</title>
+        <link>https://Oo-Esechi-oO.github.io/tags/%E8%87%AA%E4%BD%9Cpc/</link>
+        <description>Recent content in 自作PC on えせちの作業部屋</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Sat, 17 Dec 2022 16:27:12 +0900</lastBuildDate><atom:link href="https://Oo-Esechi-oO.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 17 Dec 2022 16:27:12 +0900</lastBuildDate><atom:link href="https://Oo-Esechi-oO.github.io/tags/%E8%87%AA%E4%BD%9Cpc/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>自作PCを組んでみた！ Part1</title>
         <link>https://Oo-Esechi-oO.github.io/p/20221217/</link>
         <pubDate>Sat, 17 Dec 2022 16:27:12 +0900</pubDate>
@@ -87,33 +87,6 @@ BTOパソコンでは、SSDやメモリの容量を増減させたり、CPUの�
 &lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
 &lt;p&gt;自作PCの体験記と題して、今回は自作PCの予備知識を書いてみました。次回から実際に自分が組んだPCの実例を書いていきたいと思います。&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title>About</title>
-        <link>https://Oo-Esechi-oO.github.io/about/</link>
-        <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
-        
-        <guid>https://Oo-Esechi-oO.github.io/about/</guid>
-        <description>&lt;h2 id=&#34;このブログについて&#34;&gt;このブログについて&lt;/h2&gt;
-&lt;p&gt;　本ブログは、筆者が「技術的なこと」・「やってみたこと」などを残しておくための備忘録的サイトです。学生の頃から参考書やクラウドサービスの無料枠をうまく使いながら色々やっていましたが、イマイチ自分の身になっている感じがしませんでした。その原因として、やったことをアウトプットしていないからではないかと感じました。そこで、本ブログをアウトプットの場として活用していこうと考えました。(これが正解かわかりませんが&amp;hellip;)
-&lt;br&gt;&lt;br&gt;
-このブログで大切にしたいのは再現性です。(突然の決意表明)&lt;br&gt;
-自分がなにかを触って見る際も色々なサイトを参考にしていますが、手順通りに進めても異なる結果になり苦労した経験があります。人によって開発環境が異なるため、すべての人にとって再現性のある記事にはならないかもしれませんが、なるべく手順を詳細かつ正確に記載していきたいと思います。&lt;br&gt;
-&lt;br&gt;
-不定期更新。気長にやっていこうと思います。
-&lt;br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;筆者について&#34;&gt;筆者について&lt;/h2&gt;
-&lt;p&gt;社会人。学生時代からプログラミングによるものづくりが好きで勉強していました。&lt;br&gt;
-現在興味があるものはWPF・Python・3Dプリンタなど&amp;hellip;。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Search</title>
-        <link>https://Oo-Esechi-oO.github.io/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://Oo-Esechi-oO.github.io/search/</guid>
-        <description></description>
         </item>
         
     </channel>
