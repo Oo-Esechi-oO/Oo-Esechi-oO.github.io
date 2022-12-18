@@ -14,7 +14,7 @@ languages:
         weight: 2
 
 # Change it to your Disqus shortname before using
-disqusShortname: hugo-theme-stack
+disqusShortname: https-oo-esechi-oo-github-io
 
 # GA Tracking ID
 googleAnalytics: G-PR5FCZ2GEP
