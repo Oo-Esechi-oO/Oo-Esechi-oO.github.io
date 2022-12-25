@@ -6,7 +6,352 @@
         <description>Recent content in 自作PC on えせちの作業部屋</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Sat, 17 Dec 2022 16:27:12 +0900</lastBuildDate><atom:link href="https://Oo-Esechi-oO.github.io/categories/%E8%87%AA%E4%BD%9Cpc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 25 Dec 2022 12:11:56 +0900</lastBuildDate><atom:link href="https://Oo-Esechi-oO.github.io/categories/%E8%87%AA%E4%BD%9Cpc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>自作PCを組んでみた！ Part2</title>
+        <link>https://Oo-Esechi-oO.github.io/p/20221225/</link>
+        <pubDate>Sun, 25 Dec 2022 12:11:56 +0900</pubDate>
+        
+        <guid>https://Oo-Esechi-oO.github.io/p/20221225/</guid>
+        <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;今回は何partかに分けて自作PCにチャレンジした際の記録を書いていきます。これから自作PCを組もうとしている方で、「何からやればよいかわからない」「どんな作業工程があるのか知りたい」という方向けの記事となっています。&lt;br&gt;
+&lt;br&gt;
+Part2では購入するまでの部分を書いていこうと思います。&lt;br&gt;
+大体のイメージを掴んでもらうことを目的にしていますので、細かい内容は記載していません。
+詳細な情報を知りたい場合は各自調べてください。&lt;/p&gt;
+&lt;h2 id=&#34;スペックを決める&#34;&gt;スペックを決める&lt;/h2&gt;
+&lt;p&gt;まずは組み立てるPCのスペックを決めていきます。&lt;br&gt;
+スペックは以下のような流れで決めていきます。&lt;br&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;予算を決める&lt;/li&gt;
+&lt;li&gt;使い方を洗い出す&lt;/li&gt;
+&lt;li&gt;各パーツのスペックを決めていく&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;1-予算を決める&#34;&gt;1. 予算を決める&lt;/h3&gt;
+&lt;p&gt;まずは出せる予算を考えます。スペックを決めてもお金が用意できなければ買うことはできませんので、自分の貯金と相談して決めてください。購入するパーツを店員さんに選んで貰う場合も、予算からスペックを絞っていくことが可能になので、決めて置くと良いと思います。初めての自作PCの大体の目安は以下の表くらいかなと思います。(あくまで個人的な感覚。)&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;使い方&lt;/th&gt;
+&lt;th&gt;目安の予算&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ネットサーフィンなど軽い作業&lt;/td&gt;
+&lt;td&gt;10万円前後&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ちょっとしたゲームや複数タスクの作業をする&lt;/td&gt;
+&lt;td&gt;15万円前後&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3DCGバチバチのゲームをする&lt;/td&gt;
+&lt;td&gt;20万円以上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;今回の予算としては15万としました。ちょっとしたゲームができたり、ソフトウェア制作の環境がスムーズに動作できれば良いかなと言うことで、普段使いのPCより少し高めの予算で考えています。(店員さんに相談した際は、少し予算足りなそうな反応されてしまいましたが&amp;hellip;。)&lt;br&gt;
+&lt;br&gt;
+予算を決める際の注意点としてはOS(Windows)の購入も行う必要があるという点です。Windows11で大体15000円するので、考慮していないと結構予算削られてしまいます。店員さんに相談する際は「考えてきた予算がOSなしであること」を伝えておく必要があります。
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-使い方を洗い出す&#34;&gt;2. 使い方を洗い出す&lt;/h3&gt;
+&lt;p&gt;使い方を洗い出すことで、自分に必要なスペックを大まかに決めることができます。例えばインストールしようとしているソフトや遊ぼうと思っているゲームの推奨環境を調べると、必要なCPUやメモリ容量を決めることができます。
+また、使い方(例えばゲーム配信をするとか)で検索をかけると、大体どれくらいのスペックが必要か記載されたページがヒットするので、そういったものも参考になると思います。&lt;br&gt;
+&lt;br&gt;
+例として、自分がインストールしようと思っているCubase(DTMのソフト)の推奨環境の一部を貼っておきます。&lt;br&gt;
+OSやCPU・メモリ(RAM)などのスペックが記載されているのがわかると思います。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Oo-Esechi-oO.github.io/img/Cubase_env.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Cubaseの推奨環境&#34;
+	
+	
+&gt;
+(&lt;a class=&#34;link&#34; href=&#34;https://www.steinberg.net/ja/system-requirements/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.steinberg.net/ja/system-requirements/&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;このようなページを調査して一番負荷がかかるソフトに合わせてスペックを決めます。&lt;br&gt;
+推奨環境に記載された通りのスペックで決めてもいいですが、推奨環境から少し余裕をもたせた形にするのもOKです。
+経年劣化で動作が重くなったり、今後更に負荷がかかる処理を行う可能性も考えられたりするためです。&lt;/p&gt;
+&lt;h3 id=&#34;3-各パーツの詳細スペックを決めていく&#34;&gt;3. 各パーツの詳細スペックを決めていく&lt;/h3&gt;
+&lt;p&gt;ここから具体的に各パーツのスペックを決めていきます。主に推奨環境に記載があったスペックはそれを参考にして、記載がなかったものについては別途調査してスペックを決めていきます。&lt;br&gt;
+&lt;br&gt;
+具体的なパーツのスペックは以下の順番で決めていきます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;CPU&lt;/li&gt;
+&lt;li&gt;マザーボード&lt;/li&gt;
+&lt;li&gt;メモリ&lt;/li&gt;
+&lt;li&gt;グラフィックボード&lt;/li&gt;
+&lt;li&gt;SSD/HDD&lt;/li&gt;
+&lt;li&gt;CPUクーラー&lt;/li&gt;
+&lt;li&gt;光学ドライブ&lt;/li&gt;
+&lt;li&gt;電源ユニット&lt;/li&gt;
+&lt;li&gt;PCケース&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;CPU・マザーボード・メモリは依存関係があるので先に決定します。その他のパーツは特に順番はありません。ただ、電源とケースについては、ある程度パーツのスペックが決まらないと決定できないものですので、最後に決定するようにしています。&lt;/p&gt;
+&lt;h4 id=&#34;cpu&#34;&gt;CPU&lt;/h4&gt;
+&lt;p&gt;CPUの主流は、AMD社のRyzenシリーズかintel社のCore iシリーズとなっています。各社の細かいスペックはここでは記載しませんが、大体のイメージは以下のような感じかなと思います。&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;メリット&lt;/th&gt;
+&lt;th&gt;デメリット&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Ryzen&lt;/td&gt;
+&lt;td&gt;・Core iより性能が高いCPUがある(*1)&lt;/td&gt;
+&lt;td&gt;・トラブルが起きたときの参考ページが少ない&lt;br&gt;・性能が高いものは価格も高い&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Core i&lt;/td&gt;
+&lt;td&gt;・トラブルが起きた際の参考ページが多い&lt;br&gt;・Ryzenよりリーズナブル(*2)&lt;/td&gt;
+&lt;td&gt;・性能はRyzenのほうが高い(*1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+(*1)について&lt;br&gt;
+同じ価格帯でCore iよりRyzenのほうが性能が高いということではない。Core iとRyzenの一番スペックが高いCPUで比べた場合に、Ryzenのほうが性能が高いモデルがあるという意味。&lt;br&gt;
+3DCGゲームを遊びながら配信するなど高負荷な作業を行う場合はAMDのハイエンドクラスのスペックが良い。&lt;br&gt;
+&lt;br&gt;
+(*2)について&lt;br&gt;
+(*1)のような高負荷な使い方をしない場合はCore iのほうがリーズナブルな場合が多い。&lt;br&gt;
+&lt;br&gt;
+つまり、高スペックで選ぶならRyzen、そこまで高負荷なことをしないならCore iという感じかなと思います。
+Core iの性能が劣っているというわけではないので、そこは誤解なきように。
+&lt;br&gt;
+今回自分が選んだCPUはCore i7としました。i7の中にも更に細かい型番が存在しますが、とりあえずシリーズだけ選びました。&lt;br&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;マザーボード&#34;&gt;マザーボード&lt;/h4&gt;
+&lt;p&gt;CPUが決まるとマザーボードのスペックを決めることができます。マザーボードのスペックを決めるために必要な情報は「決めたCPUのチップセットは何か」です。チップセットはCPUのデータのやり取りを行うためのもので、RyzenかCore iか、何世代のCPUかによって提供されるチップセットが異なります。CPUとマザーボードで対応しているチップセットが異なるとうまく動作しないので、間違えないように確認して購入する必要があります。&lt;br&gt;
+&lt;br&gt;
+その他の注目ポイントとしては以下があります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;大きさ&lt;/strong&gt;&lt;br&gt;
+マザーボードには大きさに関する規格があります。主流な規格は「ATX」「MicroATX」「Mini-ITX」です。ATX &amp;gt; MicroATX &amp;gt; Mini-ITXという順に大きいです。拡張性(あとからパーツを増やしたり入れ替えたりすること)を意識する場合は「ATX」を選択し、PC設置場所に制限がある場合は「MicroATX」「Mini-ITX」を選択します。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;入出力のインターフェース&lt;/strong&gt;&lt;br&gt;
+PC背面の入出力インターフェース(USBポートなど)の内容はマザーボードで決定します。どれくらいUSB端子が必要か、USB3.0はどれくらい必要か、Type-Cは必要か、他にどのような端子がいるかなどを洗い上げて、それに見合った内容のマザーボードを選択します。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;M.2スロット&lt;/strong&gt;&lt;br&gt;
+M.2SSDを接続するためのI/F。高速なデータの読み書きが可能になる。殆どのマザーボードに搭載されているが、スロットがいくつあるかなどチェックしておくと良い。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Wi-FiやBluetoothの機能&lt;/strong&gt;&lt;br&gt;
+PCをネットワークに無線で接続する場合は、Wi-Fiに対応しているマザーボードを選択する必要がある。基本的に自作PC(=デスクトップPC)は有線で接続するものと個人的には思っているが、無線に対応したマザーボードもあるということで参考までに&amp;hellip;。&lt;br&gt;
+またマウスやキーボードなどの周辺機器を無線で接続する場合は、Bluetooth機能搭載のマザーボードもある。ただ、Bluetooth機能は後からレシーバーを買って搭載することができるので、無理にマザーボードで対応する必要はない。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;メモリ&#34;&gt;メモリ&lt;/h4&gt;
+&lt;p&gt;最低でも8GBは確保したいです。これはOS(Windows)が無理なく動くことができる容量です。4GBでも最初は問題なく動きますが、すぐに動作が重く感じてくると思います。また、価格的には8GBも16GBもそんなに変わりません。よって16GBを選ぶのが無難かなと思います。高負荷な作業をする人は32GB以上としても良いですが、メモリは増設することもできるので、そんなに必要かわからない場合は無理にこの段階で積む必要はないと思います。&lt;br&gt;
+&lt;br&gt;
+メモリの購入の仕方にも注意です。メモリは「デュアルチャンネル」という機能があり、同じ容量・規格が2枚1組になれば1枚のものより高速になるというものです。つまり、同じ16GBのメモリを積む場合でも、16GB1枚より8GB2枚としたほうがデータの読み書きが高速になるということです。&lt;br&gt;
+よって、積むと決めた容量の半分の容量のメモリを2枚買うと良いと思います。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;グラフィックボード&#34;&gt;グラフィックボード&lt;/h4&gt;
+&lt;p&gt;ゲームなど映像で負荷をかけない場合はCPUに搭載されているオンボードグラフィックで十分です。(オンボードグラフィックを搭載しているCPUを選択する必要が出てきます。)オンボードグラフィックを搭載していないCPUを選ぶ場合や、映像関係で負荷がかかる処理が想定される場合はグラフィックボードを購入する必要があります。&lt;br&gt;
+どれだけのスペックを積めばよいかは、行う作業や遊ぶ予定のゲームから判断する必要があります。&lt;br&gt;
+あとは映像端子の数も考える必要があります。マルチディスプレイにする場合はHDMI端子やDisplayPort端子が複数あるものを選択する必要があります。&lt;br&gt;
+&lt;br&gt;
+今回自分は、そこまでの負荷をかけない予定だったので、すべてのパーツを決めてから余った予算の価格帯のものを買うという決め方をしました。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;ssdhdd&#34;&gt;SSD/HDD&lt;/h4&gt;
+&lt;p&gt;SSD/HDDは、まずどれだけの容量を買うかを検討します。&lt;br&gt;
+別途データを格納しておくための外部サーバーが用意されていて、PCにデータを格納しておく必要がない場合は256GBや512GBで十分だと思います。全データPCに格納するような環境の場合は1TB以上を考えると良いと思います。SSDのほうが高速で、(HDDより高価とは言えど)最近低価格化が進んでいるので、基本的にSSDを選択すると良いと思います。その中でも、特に「M.2 NVMe」という種類のSSDをおすすめします。これが一番早いです。他にも「M.2 SATA」という種類もありますが、NVMeより速度が遅く価格もNVMeが低価格化してきているため、選択する理由は特にないです。&lt;br&gt;
+予算的にSSD 1TBが厳しい場合は、SSDとHDDのハイブリッドと言う手もあります。OSやシステム、処理が重いソフト用にSSD 256GB~512GBとして、その他のデータをHDDとすると、大容量・低価格を実現することができます。&lt;br&gt;
+HDDのみとする選択肢はないかなと思います。SSDより圧倒的に安く抑えることができますが、動作が遅くなってしまいます。(経年劣化することも考えると動作が遅いのは致命的。)&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cpuクーラー&#34;&gt;CPUクーラー&lt;/h4&gt;
+&lt;p&gt;CPUを冷やすためのパーツです。CPUに小さいクーラーが付属している場合がありますが、冷却機能としてはいまひとつのため別途購入したほうが良いと思います。&lt;br&gt;
+クーラーの種類としては空冷と水冷があります。空冷は金属にCPUの熱を伝わらせて、その金属をファンで冷やすもの。水冷は冷却液をを巡回させるような機構になっていて、冷却液にCPUの熱を伝わらせて、ファンで冷却液を冷ますものです。水冷のほうが冷却機能が高いですが、価格は空冷のほうが安いです。&lt;br&gt;
+最初から高負荷な作業を行うことがわかっている場合は水冷を選択し、そこまで高負荷なことをしない場合は空冷で良いと思います。後から入れ替えるのもそこまで難しくないので、一旦空冷で様子見して、動作が厳しそうであれば水冷に入れ替えることもできると思います。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;光学ドライブ&#34;&gt;光学ドライブ&lt;/h4&gt;
+&lt;p&gt;CD/DVD/Blu-rayを使う場合は光学ドライブを搭載するかも考える必要があります。WindowsのインストールはUSB端子で行うため、OSのインストールのために搭載する必要はありません。また、外付けの光学ドライブもたくさんあるため、無理に搭載する必要もないと思います。&lt;br&gt;
+&lt;br&gt;
+搭載する場合は、使用予定のメディアに合わせた光学ドライブを選択するようにしましょう。(Blu-rayを利用する場合はBlu-rayに対応した光学ドライブを選択する。)&lt;br&gt;
+&lt;br&gt;
+今回自分は、すでに外付けの光学ドライブを持っていたため搭載しませんでした。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;電源ユニット&#34;&gt;電源ユニット&lt;/h4&gt;
+&lt;p&gt;電源は以下のサイトから目安を計算することができます。&lt;br&gt;
+ドスパラ：(&lt;a class=&#34;link&#34; href=&#34;https://www.dospara.co.jp/5info/cts_str_power_calculation_main&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.dospara.co.jp/5info/cts_str_power_calculation_main&lt;/a&gt;)&lt;br&gt;
+&lt;br&gt;
+今まで選択してきたパーツの内容を入力することで、「合計使用電力目安」と「おすすめ電力容量」を算出してくれます。「おすすめ電力容量」は「合計使用電力目安」の2倍の値となっています。これは最大電力容量の半分の容量の時が、電力変換効率が一番良い設計となっているからです。他にも、将来的な拡張用や、外部デバイスをPCに接続した場合でも安定して運転できるようにするためなどが挙げられます。なので、「合計使用電力目安」ででた値の容量ではなく、その2倍の容量の電源ユニットを選択するようにしましょう。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;pcケース&#34;&gt;PCケース&lt;/h4&gt;
+&lt;p&gt;今まで決めてきたパーツが収まるサイズのPCケースを選択します。PCの設置場所に制限がある場合は、先にケースのサイズを決めるのも手です。(その分搭載できるパーツに制限が出てきます。)&lt;br&gt;
+&lt;br&gt;
+PCケースの大きさは基本的にマザーボードの大きさで決定しますが、電源やグラボ、CPUクーラーなどのサイズにも注意する必要があります。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;マザーボードの大きさ&lt;/th&gt;
+&lt;th&gt;対応するPCケース&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;ATX&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;ミドルタワー&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MicroATX&lt;/td&gt;
+&lt;td&gt;ミドルタワー&lt;br&gt;&lt;strong&gt;ミニタワー&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mini-ITX&lt;/td&gt;
+&lt;td&gt;ミドルタワー&lt;br&gt;ミニタワー&lt;br&gt;Mini-ITX専用ケース&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;PCの設置場所に制限がないならATXで考えると良いと思います。大きいので持って帰るのが大変ですが、拡張性が高いことと、各パーツのサイズをそこまで気にしなくても良くなるという点で楽になります。(ミニタワーサイズだとだいたいどんなパーツを選択しても設置することができる。)&lt;br&gt;
+&lt;br&gt;
+その他のPCケースの選ぶ基準としては以下があります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;フロント部分のI/F&lt;/strong&gt;&lt;br&gt;
+背面にも入出力I/F(USBポートとか)はありますが、全面にもUSBポートがあったほうが便利です。また、端子や電源ボタンの場所にも注目しておくとよいです。床にPCを設置する場合は端子や電源ボタンはPCケースの上部(天井)に付いていたほうが便利です。しかし、机上に設置する場合は前面部分についていたほうがアクセスが良くなります。&lt;br&gt;
+&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ホコリ対策&lt;/strong&gt;&lt;br&gt;
+ホコリ対策がどうなっているかで決めるのもありだと思います。フィルターが取り外しできて洗いやすいものを選ぶとメンテナンスが楽になります。&lt;br&gt;
+&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;見た目&lt;/strong&gt;&lt;br&gt;
+上で色々書きましたが、特にこだわりがなければどのケースも機能・価格は似たり寄ったりです。そのため最後は見た目が好みかどうかになってきます。色やファンの光り方、側面が強化ガラスになっていて内部が見えるようになっているなど、好みの見た目のケースを選択するのが良いでしょう。&lt;br&gt;
+&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;表にまとめる任意&#34;&gt;表にまとめる(任意)&lt;/h2&gt;
+&lt;p&gt;店員に相談してパーツを決める場合は、事前にスペックを表にまとめておくと良いと思います。上記の内容をすべて細かくまとめる必要はないです。不足している情報はその場で確認されると思います。&lt;br&gt;
+今回自分は下のような感じで紙にまとめて相談しました。
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/img/spk.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;購入する&#34;&gt;購入する&lt;/h2&gt;
+&lt;p&gt;パーツを購入します。今回はTSUKUMOでパーツを揃えました。(お世話になりました。)&lt;br&gt;
+ミニタワーのケース込みですべてのパーツを店頭で購入したとしても持って帰れるように大きな紙袋を用意してくれます。念のためリュックサックを持っていくと小さいパーツはそちらに入れれるので安心だと思います。&lt;br&gt;
+&lt;br&gt;
+PCパーツ以外に必要なものとして以下も購入する必要があります。(組み立ててからの設定で必要です。)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OS(Windows)&lt;/li&gt;
+&lt;li&gt;PCモニタ&lt;/li&gt;
+&lt;li&gt;マウス&lt;/li&gt;
+&lt;li&gt;キーボード&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;今回自分が購入したパーツを以下にまとめます。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;パーツ種類&lt;/th&gt;
+&lt;th&gt;型番&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;値段&lt;/th&gt;
+&lt;th&gt;備考&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CPU&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.intel.co.jp/content/www/jp/ja/products/sku/134591/intel-core-i712700-processor-25m-cache-up-to-4-90-ghz/specifications.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Intel Core i7-12700&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;￥48,073&lt;/td&gt;
+&lt;td&gt;・i9ほどの処理は必要なかったのでi7&lt;br&gt;・13世代も出ていたが種類が少なかったので12世代&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;マザーボード&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.asus.com/jp/motherboards-components/motherboards/prime/prime-h670-plus-d4/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ASUS H670(LGA1700)ATX&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;￥19,800&lt;/td&gt;
+&lt;td&gt;・無線機能はなし&lt;br&gt;・店員さんに勧められたのもあり&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;メモリ&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.crucial.jp/memory/ddr4/ct2k8g4dfra32a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Crucial 16GB Kit (2 x 8GB) DDR4-3200 UDIMM&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;￥5,819&lt;/td&gt;
+&lt;td&gt;・ほかと比べてやすかった&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;グラボ&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.kuroutoshikou.com/product/detail/gg-rtx3050-e8gb-sf.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;玄人志向 NVIDIA GEFORCE RTX 3050 搭載 グラフィックボードGG-RTX3050-E8GB/SF&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;￥29,819&lt;/td&gt;
+&lt;td&gt;・余った予算の価格帯を選択&lt;br&gt;・DP端子が複数あるもの&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SSD&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cfd.co.jp/biz/product/detail/cssd-m2m1tpg4vnz.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CFD CFD Gaming PG4VNZ ゲーミングモデル M.2 NVMe接続SSD 1TB CSSD-M2M1TPG4VNZ&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;￥11,800&lt;/td&gt;
+&lt;td&gt;・コスパが良いということで店員さんに勧められたもの&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CPUクーラー&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.ainex.jp/products/se-224-xta/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AINEX SE-224-XTA&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;￥3,255&lt;/td&gt;
+&lt;td&gt;・安価なもの&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;電源ユニット&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.gdm.or.jp/review/2019/0912/319342&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Apexgaming AGシリーズ 80 Plus GOLD認証 750W フルプラグインATX電源 PSU AG-750M-JP PSE&lt;/a&gt;(*)&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;￥8,137&lt;/td&gt;
+&lt;td&gt;・理想電力容量438Wからもう一回り余裕のある容量でこちら&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ケース&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.antec.com/product/case/df700-flux&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Antec DF700FLUX&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;￥9,982&lt;/td&gt;
+&lt;td&gt;・見た目とフロントのI/F&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS&lt;/td&gt;
+&lt;td&gt;Windows11 Home&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;￥14,982&lt;/td&gt;
+&lt;td&gt;・せっかくなので新しいWindowsにしてみたかった。&lt;br&gt;・Proの機能は必要なかったのでHome&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;合計：￥152,167(+税)&lt;/td&gt;
+&lt;td&gt;・OS込みの値段のため予算内に収まってる&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;(*)製品ページが見つからなかったのでレビューページをリンクしています。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;今回はスペックを決めていくところから購入したところまでをまとめてみました。まあ、店員さんに聞くのが最強ということで&amp;hellip;。
+次は組み立てとセットアップについてまとめます。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>自作PCを組んでみた！ Part1</title>
         <link>https://Oo-Esechi-oO.github.io/p/20221217/</link>
         <pubDate>Sat, 17 Dec 2022 16:27:12 +0900</pubDate>
