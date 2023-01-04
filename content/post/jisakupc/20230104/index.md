@@ -42,8 +42,8 @@ CPUはこんな感じに入っています。<br>
 CPUクーラーも入っていますが、今回はもっと性能の良いCPUクーラーを別途購入しているため使いません。<br>
 <br>
 CPU本体の表と裏。<br>
-<img src="./p/20230104/img/IMG_0084.JPG" width="50%">
-<img src="./p/20230104/img/IMG_0085.JPG" width="50%"><br>
+<img src="./p/20230104/img/IMG_0084.JPG" width="49%">
+<img src="./p/20230104/img/IMG_0085.JPG" width="49%"><br>
 
 裏側のピンが一本でも折れると使い物にならなくなります。<br>
 向きを間違えないようにするためには、表面の左下にある三角形のマークとマザーボードのCPU取り付け位置にある三角形のマークを合わせること/
@@ -62,12 +62,12 @@ AMD用のパーツとintel用のパーツがあるので、取説をしっかり
 
 まずは土台の設置から。<br>
 マザーボード裏側から4本足のパーツを通して...<br>
-<img src="./p/20230104/img/IMG_0090.JPG" width="50%">
-<img src="./p/20230104/img/IMG_0091.JPG" width="50%"><br>
+<img src="./p/20230104/img/IMG_0090.JPG" width="49%">
+<img src="./p/20230104/img/IMG_0091.JPG" width="49%"><br>
 <br>
 足場を作って...<br>
-<img src="./p/20230104/img/IMG_0092.JPG" width="50%">
-<img src="./p/20230104/img/IMG_0096.JPG" width="50%"><br>
+<img src="./p/20230104/img/IMG_0092.JPG" width="49%">
+<img src="./p/20230104/img/IMG_0096.JPG" width="49%"><br>
 <br>
 足場を固定。<br>
 ![](./p/20230104/img/IMG_0097.JPG)<br>
@@ -119,8 +119,8 @@ CPUクーラーの取り付け向きが決まったら、設置のための金�
 #### SSD
 次はSSDを設置します。<br>
 マザーボード上のSSD取り付け位置のカバーを外して...<br>
-<img src="./p/20230104/img/IMG_0111.JPG" width="50%">
-<img src="./p/20230104/img/IMG_0109.JPG" width="50%"><br>
+<img src="./p/20230104/img/IMG_0111.JPG" width="49%">
+<img src="./p/20230104/img/IMG_0109.JPG" width="49%"><br>
 <br>
 SSD本体をスロットに差し込んで...<br>
 ![](./p/20230104/img/IMG_0112.JPG)<br>
@@ -134,12 +134,12 @@ SSD本体をスロットに差し込んで...<br>
 #### ケースとマザーボード
 ここまで来たらケースにマザーボードを設置します。<br>
 ケース開封<br>
-<img src="./p/20230104/img/IMG_0079.JPG" width="50%">
-<img src="./p/20230104/img/IMG_0080.JPG" width="50%"><br>
+<img src="./p/20230104/img/IMG_0079.JPG" width="49%">
+<img src="./p/20230104/img/IMG_0080.JPG" width="49%"><br>
 <br>
 側面を外した感じはこんなん。<br>
-<img src="./p/20230104/img/IMG_0093.JPG" width="50%">
-<img src="./p/20230104/img/IMG_0094.JPG" width="50%"><br>
+<img src="./p/20230104/img/IMG_0093.JPG" width="49%">
+<img src="./p/20230104/img/IMG_0094.JPG" width="49%"><br>
 <br>
 今回購入したPCケースには小さい基盤が設置されています。<br>
 フロントパネルコネクタといい、ここで一括でフロントファン・リアファン・LEDの管理を行います。<br>
@@ -154,16 +154,16 @@ SSD本体をスロットに差し込んで...<br>
 #### グラフィックボード
 次にグラボを積みます。<br>
 PCIeの設置場所にあるカバーを取って...<br>
-<img src="./p/20230104/img/IMG_0118.JPG" width="50%">
-<img src="./p/20230104/img/IMG_0119.JPG" width="50%"><br>
+<img src="./p/20230104/img/IMG_0118.JPG" width="49%">
+<img src="./p/20230104/img/IMG_0119.JPG" width="49%"><br>
 <br>
 PCIeのスロットに合わせてグラボを設置します。<br>
 ![](./p/20230104/img/IMG_0120.JPG)<br>
 <br>
 そんでネジで固定します。<br>
 もともとあったカバーは設置できなくなるので保管しておきましょう。<br>
-<img src="./p/20230104/img/IMG_0121.JPG" width="50%">
-<img src="./p/20230104/img/IMG_0122.JPG" width="50%"><br>
+<img src="./p/20230104/img/IMG_0121.JPG" width="49%">
+<img src="./p/20230104/img/IMG_0122.JPG" width="49%"><br>
 <br>
 #### 電源ユニット
 そして電源ユニットを設置します。<br>
@@ -185,8 +185,8 @@ PCIeのスロットに合わせてグラボを設置します。<br>
 <br>
 うまく行ったときの様子はこんな感じ。<br>
 PC内部は光るパーツが無いのでかなり地味。今後パーツをアップデートしていく際に光るものを取り入れていこうと思います。<br>
-<img src="./p/20230104/img/IMG_0126.JPG" width="50%">
-<img src="./p/20230104/img/IMG_0127.JPG" width="50%"><br>
+<img src="./p/20230104/img/IMG_0126.JPG" width="49%">
+<img src="./p/20230104/img/IMG_0127.JPG" width="49%"><br>
 <br>
 ![](./p/20230104/img/IMG_0125.MOV)<br>
 <br>
