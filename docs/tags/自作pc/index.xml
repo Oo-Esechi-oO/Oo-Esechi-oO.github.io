@@ -6,7 +6,524 @@
         <description>Recent content in 自作PC on えせちの作業部屋</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
-        <lastBuildDate>Sun, 25 Dec 2022 12:11:56 +0900</lastBuildDate><atom:link href="https://Oo-Esechi-oO.github.io/tags/%E8%87%AA%E4%BD%9Cpc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 04 Jan 2023 14:01:33 +0900</lastBuildDate><atom:link href="https://Oo-Esechi-oO.github.io/tags/%E8%87%AA%E4%BD%9Cpc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>自作PC組んでみた！Part3</title>
+        <link>https://Oo-Esechi-oO.github.io/p/20230104/</link>
+        <pubDate>Wed, 04 Jan 2023 14:01:33 +0900</pubDate>
+        
+        <guid>https://Oo-Esechi-oO.github.io/p/20230104/</guid>
+        <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;今回は何partかに分けて自作PCにチャレンジした際の記録を書いていきます。これから自作PCを組もうとしている方で、「何からやればよいかわからない」「どんな作業工程があるのか知りたい」という方向けの記事となっています。&lt;br&gt;
+&lt;br&gt;
+Part3では組み立てからセットアップまでの部分をまとめていきます。これが最終回になります。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;組み立て&#34;&gt;組み立て&lt;/h2&gt;
+&lt;h3 id=&#34;必要なもの注意点&#34;&gt;必要なもの・注意点&lt;/h3&gt;
+&lt;p&gt;自作PCの組み立てで必要なものは「プラスドライバー」です。とりあえずこれがあれば組み立てることができます。あとは広い場所を確保することくらいですかね。かなり散らかります。&lt;br&gt;
+&lt;br&gt;
+静電気対策で軍手などの作業手袋を用意するようにと書いてあるところもありますが、あまりおすすめしません。軍手などを使って作業することで細かい作業がしづらくなってしまいます。はじめて組み立てを行う人は慣れていないので、パーツを落として壊してしまう可能性が高くなってしまいます。(って店員さんが言ってました。)&lt;br&gt;
+静電気が気になる方はパーツを触る前に、金属のものに触れて放電するだけで十分とのことでした。&lt;br&gt;
+&lt;br&gt;
+あとパーツの化粧箱は取っておいたほうが良いです。パーツを入れ替えた際に、不要になったパーツは中古店に売ることができますが、箱の有無で買取価格が変わるものがあります。&lt;br&gt;
+ざっと調べた感じ、箱を残しておいたほうが良いものとしてはCPU・GPUが挙げられるみたいです。&lt;br&gt;
+箱からパーツを出す際は箱をめちゃくちゃにしないように注意して取り出しましょう。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;組立作業&#34;&gt;組立作業&lt;/h3&gt;
+&lt;p&gt;それではここから実際の組み立ての様子をまとめていきます。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0081.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;マザーボードとcpu&#34;&gt;マザーボードとCPU&lt;/h4&gt;
+&lt;p&gt;まずはマザーボードにパーツを載せて行きます。&lt;br&gt;
+ということでマザーボード開封～&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0082.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+まず最初に取り付けるのはCPU!&lt;span style=&#34;color:red;&#34;&gt;ここが一番ミスしてはいけない作業。&lt;/span&gt;CPUには取り付けの向きがあるので、それを間違えると取り返しがつかないことになります。具体的には、CPUの裏側にあるピンが折れる、またはマザーボードのCPU取り付け位置にあるピンが折れてしまいます。このピンが折れると完全に使い物にならない「ただの板」が出来上がるので注意が必要です。&lt;br&gt;
+&lt;br&gt;
+CPUはこんな感じに入っています。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0083.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+CPUクーラーも入っていますが、今回はもっと性能の良いCPUクーラーを別途購入しているため使いません。&lt;br&gt;
+&lt;br&gt;
+CPU本体の表と裏。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0084.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0085.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+裏側のピンが一本でも折れると使い物にならなくなります。&lt;br&gt;
+向きを間違えないようにするためには、表面の左下にある三角形のマークとマザーボードのCPU取り付け位置にある三角形のマークを合わせること/
+CPUの上下にある溝とマザーボードのCPU取り付け位置にある出っ張りを合うようにする必要があります。&lt;br&gt;
+&lt;br&gt;
+設置後の様子はこんな感じ。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0086.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+マザーボードのCPU取り付け位置のカバーを開けて&lt;span style=&#34;color:red;&#34;&gt;向きに注意して&lt;/span&gt;設置して、カバーを閉じればOKです。CPUの左下とマザーボードのカバーの左下に刻印されている三角形のマークが揃っていることに注目です。これが正しい向きで設置できている確認になります。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;cpuクーラー&#34;&gt;CPUクーラー&lt;/h4&gt;
+&lt;p&gt;続いてCPUクーラーを取り付けます。(正直CPUクーラーの取り付けはマザーボードをケースに設置してからやった方がやりやすかった気がしています&amp;hellip;。)&lt;br&gt;
+梱包の様子はこんな感じ。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0087.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+AMD用のパーツとintel用のパーツがあるので、取説をしっかり確認して組み立てて設置していきます。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;まずは土台の設置から。&lt;br&gt;
+マザーボード裏側から4本足のパーツを通して&amp;hellip;&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0090.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0091.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+足場を作って&amp;hellip;&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0092.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0096.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+足場を固定。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0097.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+熱伝導をよくするためのグリスを塗って&amp;hellip;&lt;br&gt;
+(グリスも同梱されています。注射器みたいなやつですね。)&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0098.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+冷却板を設置します。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0099.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+向きはこれで合ってるのかな？&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0100.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+次にファンを設置します。&lt;br&gt;
+マザーボード上の「CHA_FAN1」に端子を繋いで、コードの長さを調整します。(コードのあまりが多い場合は、本体に巻きつけるなどして調整します。)&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0101.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+ファン側面には「ファンが回る向き」と「風の向き」が刻印されているので、これをもとに設置向きを決定します。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0103.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+PC内部の風の流れの参考サイトは以下。&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.thefastcode.com/ja-jpy/article/how-to-manage-your-pc-s-fans-for-optimal-airflow-and-cooling&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;最適な空気の流れと冷却のためにPCのファンを管理する方法&lt;/a&gt;&lt;br&gt;
+&lt;br&gt;
+PC内の空気の流れは「前から後ろ」「下から上」です。ケース前面のフロントファンから冷たい空気を取り入れて、ケース後方のリアファンから温まった空気を逃がすことで効率的にPC内を冷やすことができます。&lt;br&gt;
+CPUは一番冷やしたいパーツですので、フロントファンから取り込んだ冷たい空気をそのまま当てれるように向きを決定します。&lt;br&gt;
+&lt;br&gt;
+CPUクーラーの取り付け向きが決まったら、設置のための金具を付けて&amp;hellip;&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0104.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+冷却板に引っ掛けるような形で設置します。&lt;br&gt;
+(画像でいうと右から左に空気が流れるように設置しています。)&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0105.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+ここまでの手順でマザーボード全体はこんな感じ&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0106.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+上でも書きましたが、CPUクーラーはマザーボードをケースに設置してからのほうが、扱いやすかったなと思いました。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;メモリ&#34;&gt;メモリ&lt;/h4&gt;
+&lt;p&gt;続いてメモリを設置します。
+今回のマザーボードは、メモリスロットのロックは片側しかないため、ロックを解除して&amp;hellip;&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0107.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+向きに注意して、しっかりと差し込みます。&lt;br&gt;
+(半挿しの状態にならないようにカチッと音がなるまで、音がなっても念のため最後にグッと押し込みます。)&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0108.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+今回メモリは8GB*2枚でデュアルチャンネルの構成にしているので、一つ飛ばしたスロットにもう一枚設置して完了です。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;ssd&#34;&gt;SSD&lt;/h4&gt;
+&lt;p&gt;次はSSDを設置します。&lt;br&gt;
+マザーボード上のSSD取り付け位置のカバーを外して&amp;hellip;&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0111.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0109.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+SSD本体をスロットに差し込んで&amp;hellip;&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0112.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+外したカバー裏面のヒートシンクのカバーをペロッとめくって&amp;hellip;&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0113.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+もとに戻す。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0114.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;ケースとマザーボード&#34;&gt;ケースとマザーボード&lt;/h4&gt;
+&lt;p&gt;ここまで来たらケースにマザーボードを設置します。&lt;br&gt;
+ケース開封&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0079.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0080.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+側面を外した感じはこんなん。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0093.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0094.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+今回購入したPCケースには小さい基盤が設置されています。&lt;br&gt;
+フロントパネルコネクタといい、ここで一括でフロントファン・リアファン・LEDの管理を行います。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0095.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+ケースにマザーボードを設置した様子はこちら。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0116.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+ケース後方の入出力I/Fのポートを合わせるのが難しかった。次マザーボードを購入することがあれば、ここのポートは最初から覆われてるものを買うことにします。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0117.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;グラフィックボード&#34;&gt;グラフィックボード&lt;/h4&gt;
+&lt;p&gt;次にグラボを積みます。&lt;br&gt;
+PCIeの設置場所にあるカバーを取って&amp;hellip;&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0118.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0119.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+PCIeのスロットに合わせてグラボを設置します。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0120.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+そんでネジで固定します。&lt;br&gt;
+もともとあったカバーは設置できなくなるので保管しておきましょう。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0121.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0122.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;電源ユニット&#34;&gt;電源ユニット&lt;/h4&gt;
+&lt;p&gt;そして電源ユニットを設置します。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0123.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+ここまでの全体の様子はこんな感じ。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0124.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;配線&#34;&gt;配線&lt;/h4&gt;
+&lt;p&gt;次に配線を行っていくのですが、ここのあたり写真を撮るのを忘れてしましました&amp;hellip;。
+どこに接続するのかまるでわからず、一生懸命になるあまり忘れてしまいました&amp;hellip;。&lt;br&gt;
+接続が必要なのは、「電源とマザーボード」「電源とグラボ」「電源とフロントパネル」だった思います。
+端子の接続部分の形やピンの数が同じことを確認して接続していきます。
+形が合わないもの同士は接続できないので、間違ったところに挿して故障するみたいなことは起こりにくいと思います。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;動作確認&#34;&gt;動作確認&lt;/h4&gt;
+&lt;p&gt;配線までできたら動作確認を行います。&lt;br&gt;
+自分が遭遇したトラブルとしては、「CPUクーラーは動くのに、ケースのファンが回らない・光らない」と言ったものです。これの原因しては電源とフロントパネルを接続していなかったからでした。この時点でのトラブルは「接続忘れ」や「ちゃんと接続できていない」という理由がほとんどだと思うので、うまく動かなかった場合はどこが動いていないか、その周りの接続部分はちゃんと接続できているかを確認します。&lt;br&gt;
+&lt;br&gt;
+うまく行ったときの様子はこんな感じ。&lt;br&gt;
+PC内部は光るパーツが無いのでかなり地味。今後パーツをアップデートしていく際に光るものを取り入れていこうと思います。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0126.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0127.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0125.MOV&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;セットアップ&#34;&gt;セットアップ&lt;/h3&gt;
+&lt;p&gt;ここまでで組み立ては完了。&lt;br&gt;
+次にセットアップを行います。セットアップするにはモニタやキーボードが必要になります。&lt;br&gt;
+セットアップと言ってもOSをインストールするだけですが&amp;hellip;。&lt;br&gt;
+Windows11はUSBメモリみたいなやつをPCに接続して電源をいれるだけで、インストールが始まります。&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
+&lt;p&gt;最後に周辺機器の配線を見直して完成！&lt;br&gt;
+所要時間は6時間くらいだったと思います。慣れればもっと早くできるはず&amp;hellip;。&lt;br&gt;
+一番ハマったのは配線ですね。どこに何を接続するかの取説みたいなのがあるわけじゃなかったので苦労しました。&lt;br&gt;
+&lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230104/IMG_0130.JPG&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+&lt;br&gt;
+しばらくこの構成で使って、物足りなさを感じてきたらまたパーツを入れ替えていこうと思います。&lt;br&gt;
+デスク周りの紹介はまた別で書こうと思います。カテゴリー「デスクツアー」にまとめる予定です。&lt;br&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>自作PCを組んでみた！ Part2</title>
         <link>https://Oo-Esechi-oO.github.io/p/20221225/</link>
         <pubDate>Sun, 25 Dec 2022 12:11:56 +0900</pubDate>
