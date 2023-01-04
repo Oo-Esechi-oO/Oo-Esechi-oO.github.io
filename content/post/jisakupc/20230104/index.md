@@ -1,5 +1,5 @@
 ---
-title: "自作PC組んでみた！Part3"
+title: "自作PCを組んでみた！Part3"
 description: "はじめての自作PC体験記"
 slug: 20230104
 date: 2023-01-04T14:01:33+09:00
@@ -62,7 +62,7 @@ AMD用のパーツとintel用のパーツがあるので、取説をしっかり
 
 まずは土台の設置から。<br>
 マザーボード裏側から4本足のパーツを通して...<br>
-<img src="/p/20230104/img/IMG_0090.JPG" width="49%">
+<img src="/p/20230104/img/IMG_0089.JPG" width="49%">
 <img src="/p/20230104/img/IMG_0091.JPG" width="49%"><br>
 <br>
 足場を作って...<br>
