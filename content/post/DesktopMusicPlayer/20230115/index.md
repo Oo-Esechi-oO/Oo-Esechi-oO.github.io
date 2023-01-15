@@ -116,7 +116,7 @@ VisualStudioの画面右側の「ソリューションエクスプローラ内�
 [C#で音声波形を表示する音楽プレーヤーを作る](https://qiita.com/takesyhi/items/a0f03447bb893c9ab937)<br><br>
 
 そのままでは動かなかったので一部修正します。<br>
-■MainWindows.xaml.csグローバル変数outputDeviceの宣言(MainWindows.xaml.cs)<br>
+■グローバル変数outputDeviceの宣言(MainWindows.xaml.cs)<br>
 (before)
 ```C# 
 /// <summary>

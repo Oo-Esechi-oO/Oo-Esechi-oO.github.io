@@ -134,7 +134,7 @@ VisualStudioの画面右側の「ソリューションエクスプローラ内�
 &lt;a class=&#34;link&#34; href=&#34;https://qiita.com/takesyhi/items/a0f03447bb893c9ab937&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;C#で音声波形を表示する音楽プレーヤーを作る&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;そのままでは動かなかったので一部修正します。&lt;br&gt;
-■MainWindows.xaml.csグローバル変数outputDeviceの宣言(MainWindows.xaml.cs)&lt;br&gt;
+■グローバル変数outputDeviceの宣言(MainWindows.xaml.cs)&lt;br&gt;
 (before)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
