@@ -7,27 +7,27 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>ja</language>
         <lastBuildDate>Sun, 15 Jan 2023 13:15:57 +0900</lastBuildDate><atom:link href="https://Oo-Esechi-oO.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>デスクトップ音楽プレイヤーを作る #1</title>
+        <title>デスクトップ音楽プレーヤーを作る #1</title>
         <link>https://Oo-Esechi-oO.github.io/p/20230115/</link>
         <pubDate>Sun, 15 Jan 2023 13:15:57 +0900</pubDate>
         
         <guid>https://Oo-Esechi-oO.github.io/p/20230115/</guid>
         <description>&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;今回はPCのデスクトップ上で手軽に扱える音楽プレイヤーの作成を行っていきます。&lt;br&gt;
-Windowsでは音楽の再生ソフトで「メディアプレイヤー」がインストールされています。&lt;br&gt;
+&lt;p&gt;今回はPCのデスクトップ上で手軽に扱える音楽プレーヤーの作成を行っていきます。&lt;br&gt;
+Windowsでは音楽の再生ソフトで「メディアプレーヤー」がインストールされています。&lt;br&gt;
 が、音楽ファイルを実行しないと(= 音楽ファイルの場所までいかなと)いけなかったり、使い勝手があんまり好みじゃなかったりするため自作していくことにしました。&lt;br&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;p&gt;このパートでは、まず音楽ファイルが再生できるところまでを実装していきます。&lt;br&gt;
 &lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;方針構想&#34;&gt;方針・構想&lt;/h2&gt;
 &lt;h3 id=&#34;今回作りたいもの&#34;&gt;今回作りたいもの&lt;/h3&gt;
-&lt;p&gt;今回作りたい音楽プレイヤーはこんな感じで考えています。&lt;br&gt;
+&lt;p&gt;今回作りたい音楽プレーヤーはこんな感じで考えています。&lt;br&gt;
 &lt;br&gt;
 &lt;img src=&#34;https://Oo-Esechi-oO.github.io/p/20230115/img/idea.png&#34; width=&#34;80%&#34;&gt;&lt;br&gt;
 &lt;br&gt;
-音楽プレイヤー自体はモニターの片隅に置けるくらいの大きさとします。また、PCの起動と同時に音楽プレイヤーも起動がかかるようにし、いつでも再生できるようにします。(これは実装するというよりもWindowsで設定する内容になると思います。)&lt;br&gt;
+音楽プレーヤー自体はモニターの片隅に置けるくらいの大きさとします。また、PCの起動と同時に音楽プレーヤーも起動がかかるようにし、いつでも再生できるようにします。(これは実装するというよりもWindowsで設定する内容になると思います。)&lt;br&gt;
 &lt;br&gt;
-音楽プレイヤーの表示内容としては、音の波形を表示できるようにして、視覚的にも楽しめるようにします。&lt;br&gt;
+音楽プレーヤーの表示内容としては、音の波形を表示できるようにして、視覚的にも楽しめるようにします。&lt;br&gt;
 &lt;br&gt;
 UI部分はなるべく小さくし、最小限の機能のみを実装するようにします。&lt;/p&gt;
 &lt;table&gt;
@@ -954,7 +954,7 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fileNames&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                              &lt;span class=&#34;c1&#34;&gt;//音楽ファイルの名前&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt;     &lt;span class=&#34;n&#34;&gt;isPlaying&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                              &lt;span class=&#34;c1&#34;&gt;//再生中かどうかのフラグ&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fileNamesIndex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                              &lt;span class=&#34;c1&#34;&gt;//fileNamesのindex&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;WaveOut&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;outputDevice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                            &lt;span class=&#34;c1&#34;&gt;//音楽プレイヤー&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;WaveOut&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;outputDevice&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                            &lt;span class=&#34;c1&#34;&gt;//音楽プレーヤー&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;AudioFileReader&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;audioStream&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                     &lt;span class=&#34;c1&#34;&gt;//フーリエ変換前の音楽データ&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;readonly&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;reciprocal_of_FPS&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;167000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;//60(fps)の逆数 (100ns)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[,]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                                 &lt;span class=&#34;c1&#34;&gt;//フーリエ変換後の音楽データ&lt;/span&gt;
@@ -1078,7 +1078,7 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;まとめ&#34;&gt;まとめ&lt;/h2&gt;
-&lt;p&gt;今回は自作のデスクトップ音楽プレイヤーを作るということで、サンプルプログラムをもとに音楽を再生する部分を実装しました。次回は1曲終了後にループできるように実装します。&lt;/p&gt;
+&lt;p&gt;今回は自作のデスクトップ音楽プレーヤーを作るということで、サンプルプログラムをもとに音楽を再生する部分を実装しました。次回は1曲終了後にループできるように実装します。&lt;/p&gt;
 &lt;h2 id=&#34;参考にさせていただいたサイト&#34;&gt;参考にさせていただいたサイト&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://qiita.com/takesyhi/items/a0f03447bb893c9ab937&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

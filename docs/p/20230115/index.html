@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='デスクトップ音楽プレイヤー作成記録'>
-<title>デスクトップ音楽プレイヤーを作る #1</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='デスクトップ音楽プレーヤー作成記録'>
+<title>デスクトップ音楽プレーヤーを作る #1</title>
 
 <link rel='canonical' href='https://Oo-Esechi-oO.github.io/p/20230115/'>
 
-<link rel="stylesheet" href="/scss/style.min.a4b80d2ef8cb84c7da62c3254fd754fcbb42f0bb2f1ebc43e8390d10ff6e5c80.css"><meta property='og:title' content='デスクトップ音楽プレイヤーを作る #1'>
-<meta property='og:description' content='デスクトップ音楽プレイヤー作成記録'>
+<link rel="stylesheet" href="/scss/style.min.a4b80d2ef8cb84c7da62c3254fd754fcbb42f0bb2f1ebc43e8390d10ff6e5c80.css"><meta property='og:title' content='デスクトップ音楽プレーヤーを作る #1'>
+<meta property='og:description' content='デスクトップ音楽プレーヤー作成記録'>
 <meta property='og:url' content='https://Oo-Esechi-oO.github.io/p/20230115/'>
 <meta property='og:site_name' content='えせちの作業部屋'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='wpf' /><meta property='article:tag' content='C#' /><meta property='article:tag' content='Windowsアプリ' /><meta property='article:tag' content='GUIツール' /><meta property='article:published_time' content='2023-01-15T13:15:57&#43;09:00'/><meta property='article:modified_time' content='2023-01-15T13:15:57&#43;09:00'/>
-<meta name="twitter:title" content="デスクトップ音楽プレイヤーを作る #1">
-<meta name="twitter:description" content="デスクトップ音楽プレイヤー作成記録">
+<meta name="twitter:title" content="デスクトップ音楽プレーヤーを作る #1">
+<meta name="twitter:description" content="デスクトップ音楽プレーヤー作成記録">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR5FCZ2GEP"></script>
 <script>
 var doNotTrack = false;
@@ -280,8 +280,8 @@ if (!doNotTrack) {
     
     <header class="article-category">
         
-            <a href="/categories/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC/" >
-                デスクトップ音楽プレイヤー
+            <a href="/categories/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC/" >
+                デスクトップ音楽プレーヤー
             </a>
         
     </header>
@@ -289,12 +289,12 @@ if (!doNotTrack) {
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/20230115/">デスクトップ音楽プレイヤーを作る #1</a>
+            <a href="/p/20230115/">デスクトップ音楽プレーヤーを作る #1</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            デスクトップ音楽プレイヤー作成記録
+            デスクトップ音楽プレーヤー作成記録
         </h3>
         
     </div>
@@ -332,21 +332,21 @@ if (!doNotTrack) {
     
     
     <h2 id="はじめに">はじめに</h2>
-<p>今回はPCのデスクトップ上で手軽に扱える音楽プレイヤーの作成を行っていきます。<br>
-Windowsでは音楽の再生ソフトで「メディアプレイヤー」がインストールされています。<br>
+<p>今回はPCのデスクトップ上で手軽に扱える音楽プレーヤーの作成を行っていきます。<br>
+Windowsでは音楽の再生ソフトで「メディアプレーヤー」がインストールされています。<br>
 が、音楽ファイルを実行しないと(= 音楽ファイルの場所までいかなと)いけなかったり、使い勝手があんまり好みじゃなかったりするため自作していくことにしました。<br>
 <br></p>
 <p>このパートでは、まず音楽ファイルが再生できるところまでを実装していきます。<br>
 <br></p>
 <h2 id="方針構想">方針・構想</h2>
 <h3 id="今回作りたいもの">今回作りたいもの</h3>
-<p>今回作りたい音楽プレイヤーはこんな感じで考えています。<br>
+<p>今回作りたい音楽プレーヤーはこんな感じで考えています。<br>
 <br>
 <img src="/p/20230115/img/idea.png" width="80%"><br>
 <br>
-音楽プレイヤー自体はモニターの片隅に置けるくらいの大きさとします。また、PCの起動と同時に音楽プレイヤーも起動がかかるようにし、いつでも再生できるようにします。(これは実装するというよりもWindowsで設定する内容になると思います。)<br>
+音楽プレーヤー自体はモニターの片隅に置けるくらいの大きさとします。また、PCの起動と同時に音楽プレーヤーも起動がかかるようにし、いつでも再生できるようにします。(これは実装するというよりもWindowsで設定する内容になると思います。)<br>
 <br>
-音楽プレイヤーの表示内容としては、音の波形を表示できるようにして、視覚的にも楽しめるようにします。<br>
+音楽プレーヤーの表示内容としては、音の波形を表示できるようにして、視覚的にも楽しめるようにします。<br>
 <br>
 UI部分はなるべく小さくし、最小限の機能のみを実装するようにします。</p>
 <div class="table-wrapper"><table>
@@ -1273,7 +1273,7 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">fileNames</span><span class="p">;</span>                              <span class="c1">//音楽ファイルの名前</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">bool</span>     <span class="n">isPlaying</span><span class="p">;</span>                              <span class="c1">//再生中かどうかのフラグ</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">int</span> <span class="n">fileNamesIndex</span><span class="p">;</span>                              <span class="c1">//fileNamesのindex</span>
-</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">WaveOut</span> <span class="n">outputDevice</span><span class="p">;</span>                            <span class="c1">//音楽プレイヤー</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">WaveOut</span> <span class="n">outputDevice</span><span class="p">;</span>                            <span class="c1">//音楽プレーヤー</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">AudioFileReader</span> <span class="n">audioStream</span><span class="p">;</span>                     <span class="c1">//フーリエ変換前の音楽データ</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">readonly</span> <span class="kt">long</span> <span class="n">reciprocal_of_FPS</span> <span class="p">=</span> <span class="m">167000</span><span class="p">;</span>        <span class="c1">//60(fps)の逆数 (100ns)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">float</span><span class="p">[,]</span> <span class="n">result</span><span class="p">;</span>                                 <span class="c1">//フーリエ変換後の音楽データ</span>
@@ -1397,7 +1397,7 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="まとめ">まとめ</h2>
-<p>今回は自作のデスクトップ音楽プレイヤーを作るということで、サンプルプログラムをもとに音楽を再生する部分を実装しました。次回は1曲終了後にループできるように実装します。</p>
+<p>今回は自作のデスクトップ音楽プレーヤーを作るということで、サンプルプログラムをもとに音楽を再生する部分を実装しました。次回は1曲終了後にループできるように実装します。</p>
 <h2 id="参考にさせていただいたサイト">参考にさせていただいたサイト</h2>
 <ul>
 <li><a class="link" href="https://qiita.com/takesyhi/items/a0f03447bb893c9ab937"  target="_blank" rel="noopener"
