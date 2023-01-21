@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='デスクトップ音楽プレーヤー作成記録'>
+<title>デスクトップ音楽プレーヤーを作る #2</title>
+
+<link rel='canonical' href='https://Oo-Esechi-oO.github.io/p/20230121/'>
+
+<link rel="stylesheet" href="/scss/style.min.a4b80d2ef8cb84c7da62c3254fd754fcbb42f0bb2f1ebc43e8390d10ff6e5c80.css"><meta property='og:title' content='デスクトップ音楽プレーヤーを作る #2'>
+<meta property='og:description' content='デスクトップ音楽プレーヤー作成記録'>
+<meta property='og:url' content='https://Oo-Esechi-oO.github.io/p/20230121/'>
+<meta property='og:site_name' content='えせちの作業部屋'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='wpf' /><meta property='article:tag' content='C#' /><meta property='article:tag' content='Windowsアプリ' /><meta property='article:tag' content='GUIツール' /><meta property='article:published_time' content='2023-01-21T13:05:43&#43;09:00'/><meta property='article:modified_time' content='2023-01-21T13:05:43&#43;09:00'/>
+<meta name="twitter:title" content="デスクトップ音楽プレーヤーを作る #2">
+<meta name="twitter:description" content="デスクトップ音楽プレーヤー作成記録">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PR5FCZ2GEP"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-PR5FCZ2GEP', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="メニューを開く・閉じる">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    <img src="/img/avatar.png" width="300" height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">えせちの作業部屋</a></h1>
+            <h2 class="site-description">趣味でやったことを書き残しておくための備忘録的なブログです。たまーにプライベートな内容も書くかも。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Oo-Esechi-oO'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/null_cats'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>ダークモード</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目次</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#方針構想">方針・構想</a></li>
+    <li><a href="#実装">実装</a></li>
+    <li><a href="#成果物">成果物</a>
+      <ol>
+        <li><a href="#動作">動作</a></li>
+        <li><a href="#ソースコード">ソースコード</a></li>
+      </ol>
+    </li>
+    <li><a href="#まとめ">まとめ</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97%E9%9F%B3%E6%A5%BD%E3%83%97%E3%83%AC%E3%83%BC%E3%83%A4%E3%83%BC/" >
+                デスクトップ音楽プレーヤー
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/20230121/">デスクトップ音楽プレーヤーを作る #2</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            デスクトップ音楽プレーヤー作成記録
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 21, 2023</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="はじめに">はじめに</h2>
+<p>今回はPCのデスクトップ上で手軽に扱える音楽プレーヤーの作成を行っていきます。<br>
+Windowsでは音楽の再生ソフトで「メディアプレーヤー」がインストールされています。<br>
+が、音楽ファイルを実行しないと(= 音楽ファイルの場所までいかなと)いけなかったり、使い勝手があんまり好みじゃなかったりするため自作していくことにしました。<br>
+<br>
+このパートでは、連続再生できるように実装していきます。<br>
+<br></p>
+<h2 id="方針構想">方針・構想</h2>
+<p>前回までで音楽の再生と一時停止ができるように実装しました。<br>
+今回は連続再生、つまり音楽が最後まで再生しきったら、自動で次の音楽を再生できるようにしていきます。<br>
+<br>
+具体的には、音楽ファイルの再生終了を検知したら、次の音楽ファイルを読み込み再生するように処理を追加していきます。<br>
+音楽の再生処理に使っているNAudioのWaveOutクラスは、音楽再生中はPlaying状態、音楽再生終了後はStopped状態を取得できるため、これを使って再生終了を検知します。PlayingやStoppedの状態は、音楽を再生しているWaveOutクラスのPlaybackStateプロパティが保持しています。<br>
+この状態取得はDispatcherTimerクラスで1秒ごとにウォッチするようにします。<br>
+<br>
+再生中と停止中の検出の様子は以下の動画のようになります。<br>
+曲の再生が終わるとStopped状態に移行していることがわかります。<br></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Vy4N2Ue3SEU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+<br>
+この処理は以下のソースコードをDispatcherTimerクラスに登録して1秒ごとに関数呼び出しさせることで実現できています。<br>
+このことから以下ソースコードの関数内の処理を「次に再生する曲の準備をして再生する」というように記述すれば、曲終了後に次の曲が自動的に流れるように実装できるはずです。<br>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl">    <span class="k">private</span> <span class="k">void</span> <span class="n">looptimer_tick</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">outputDevice</span><span class="p">.</span><span class="n">PlaybackState</span> <span class="p">==</span> <span class="n">PlaybackState</span><span class="p">.</span><span class="n">Stopped</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 音楽が停止状態であればStoppedを出力 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Stopped&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">outputDevice</span><span class="p">.</span><span class="n">PlaybackState</span> <span class="p">==</span> <span class="n">PlaybackState</span><span class="p">.</span><span class="n">Playing</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 音楽が再生状態であればPlayingを出力 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Playing&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+<h2 id="実装">実装</h2>
+<p>前回実装した、曲の再生を準備する関数setAudioRender()内にDispatcherTimerクラスのインスタンスを生成します。<br>
+3行目でDispatcherTimerクラスのインスタンスを生成、4行目で1秒間隔で登録した関数が実行されるようにし、5行目で実行する関数を登録します。<br>
+4行目の呼び出す時間間隔の設定は100ns単位で設定可能です。<br>
+<br>
+そして、19行目で処理を開始します。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">setAudioRender</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 追加 */</span><span class="n">loopTimer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DispatcherTimer</span><span class="p">(</span><span class="n">DispatcherPriority</span><span class="p">.</span><span class="n">Normal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 追加 */</span><span class="n">loopTimer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TimeSpan</span><span class="p">(</span><span class="m">10000000</span><span class="p">);</span> <span class="c1">//停止判定する間隔を1秒</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 追加 */</span><span class="n">loopTimer</span><span class="p">.</span><span class="n">Tick</span> <span class="p">+=</span> <span class="k">new</span> <span class="n">EventHandler</span><span class="p">(</span><span class="n">looptimer_tick</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ファイル名の拡張子によって、異なるストリームを生成</span>
+</span></span><span class="line"><span class="cl">    <span class="n">audioStream</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AudioFileReader</span><span class="p">(</span><span class="n">fileNames</span><span class="p">[</span><span class="n">fileNamesIndex</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// コンストラクタを呼んだ際に、Positionが最後尾に移動したため、0に戻す</span>
+</span></span><span class="line"><span class="cl">    <span class="n">audioStream</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// プレーヤーの生成</span>
+</span></span><span class="line"><span class="cl">    <span class="n">outputDevice</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WaveOut</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 音楽ストリームの入力</span>
+</span></span><span class="line"><span class="cl">    <span class="n">outputDevice</span><span class="p">.</span><span class="n">Init</span><span class="p">(</span><span class="n">audioStream</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">loopTimer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>  <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+5行目で登録している関数looptimer_tick()の定義は以下のようにします。<br>
+if文内で再生状態を判定します。停止状態(=再生が終了)した場合は、DispatcherTimerクラスでの音楽再生状態の取得を停止し、次の曲のインデックスを取得します。(とりあえず次のインデックスとします。)そして、次の曲を再生するための準備をして音楽を再生します。<br>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">looptimer_tick</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">outputDevice</span><span class="p">.</span><span class="n">PlaybackState</span> <span class="p">==</span> <span class="n">PlaybackState</span><span class="p">.</span><span class="n">Stopped</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loopTimer</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">updateFileNamesIndex_next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setAudioRender</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">startAudio</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+updateFileNamesIndex_next()は音楽ファイルのパスを格納している配列のインデックスを管理する変数を更新する関数です。とりあえずインクリメントして末尾まで来たら0に戻るようにしています。これにより音楽ファイルの格納順に音楽が再生されるようになります。(いずれはランダムなインデックスに更新できるようにもします。)<br>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">updateFileNamesIndex_next</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fileNamesIndex</span><span class="p">++;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">fileNamesIndex</span> <span class="p">==</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fileNamesIndex</span><span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+今の状態でプログラムを実行すると、2番目の音楽ファイルから再生されてしまいます。<br>
+これは再生ボタンを押した直後は音楽停止状態となっており、1曲目が再生されるまでに2回startAudio()が走ってしまうことが原因です。<br>
+このため以下のようにフラグで管理します。<br>
+<br>
+<p>▼再生ファイルの格納先を変えたらフラグを立てる。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonBrowser</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* フォルダを選択させる */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">folderBrowserDialog</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Forms</span><span class="p">.</span><span class="n">FolderBrowserDialog</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">Description</span> <span class="p">=</span> <span class="s">&#34;MP3ファイルを格納しているフォルダーを選択してください。&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">ShowDialog</span><span class="p">()</span> <span class="p">==</span> <span class="n">Forms</span><span class="p">.</span><span class="n">DialogResult</span><span class="p">.</span><span class="n">OK</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">basePath</span> <span class="p">=</span> <span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">SelectedPath</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">textboxBasePath</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">basePath</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">isFolderChange</span><span class="p">=</span> <span class="k">true</span><span class="p">;</span>    <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* OK以外のときはリターンする */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 選択したパス内のMP3ファイルを取得する */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fileNames</span> <span class="p">=</span> <span class="n">Directory</span><span class="p">.</span><span class="n">GetFiles</span><span class="p">(</span><span class="n">basePath</span><span class="p">,</span> <span class="s">&#34;*.mp3&#34;</span><span class="p">,</span> <span class="n">SearchOption</span><span class="p">.</span><span class="n">AllDirectories</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 音楽を再生する前準備 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">setAudioRender</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+▼音楽ファイル格納先を変更した直後はloopTimerを開始しないようにする。(次の音楽を再生するときは実行する。)
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">setAudioRender</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loopTimer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DispatcherTimer</span><span class="p">(</span><span class="n">DispatcherPriority</span><span class="p">.</span><span class="n">Normal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loopTimer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TimeSpan</span><span class="p">(</span><span class="m">10000000</span><span class="p">);</span> <span class="c1">//停止判定する間隔を1秒</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loopTimer</span><span class="p">.</span><span class="n">Tick</span> <span class="p">+=</span> <span class="k">new</span> <span class="n">EventHandler</span><span class="p">(</span><span class="n">looptimer_tick</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ファイル名の拡張子によって、異なるストリームを生成</span>
+</span></span><span class="line"><span class="cl">    <span class="n">audioStream</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AudioFileReader</span><span class="p">(</span><span class="n">fileNames</span><span class="p">[</span><span class="n">fileNamesIndex</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// コンストラクタを呼んだ際に、Positionが最後尾に移動したため、0に戻す</span>
+</span></span><span class="line"><span class="cl">    <span class="n">audioStream</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// プレーヤーの生成</span>
+</span></span><span class="line"><span class="cl">    <span class="n">outputDevice</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WaveOut</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 音楽ストリームの入力</span>
+</span></span><span class="line"><span class="cl">    <span class="n">outputDevice</span><span class="p">.</span><span class="n">Init</span><span class="p">(</span><span class="n">audioStream</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!</span><span class="n">isFolderChange</span><span class="p">)</span>  <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loopTimer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+▼再生ボタンを押したときに追加したフラグを下ろす
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonStartandPause</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">isPlaying</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 再生中のとき =&gt; ポーズ状態へ以降 */</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">        <span class="n">pauseAudio</span><span class="p">();</span>  <span class="c1">//音楽を一時停止</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;再生&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* ポース中のとき =&gt; 再生状態へ以降 */</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">        <span class="n">startAudio</span><span class="p">();</span>  <span class="c1">//音楽を再生</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">        <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;停止&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loopTimer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">isFolderChange</span><span class="p">)</span>    <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">isFolderChange</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>  <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><br>
+音楽ファイルを格納しているフォルダのパス(BasePath)を変更したかどうかを管理するフラグを追加しました。
+再生ボタンを押して音楽ファイルを再生しようとすると、2回loopTimerを開始してしまうので、これを防ぎます。
+<h2 id="成果物">成果物</h2>
+<h3 id="動作">動作</h3>
+<p>今回実装したことで、曲が終わると次の曲を再生できるようになりました。<br></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N1AIPcB0RmI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<br>
+<h3 id="ソースコード">ソースコード</h3>
+<p>今回はCSファイルのみを修正しています。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows.Controls</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows.Data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows.Documents</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows.Input</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows.Media</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows.Media.Imaging</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows.Navigation</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows.Shapes</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">NAudio.Wave</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">NAudio.Dsp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Microsoft.Win32</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Runtime.CompilerServices</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Forms</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Forms</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows.Threading</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">DesktopMusicPlayer</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cs">/// &lt;summary&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="cs">/// MainWindow.xaml の相互作用ロジック</span>
+</span></span><span class="line"><span class="cl">    <span class="cs">/// &lt;/summary&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MainWindow</span> <span class="p">:</span> <span class="n">Window</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">public</span> <span class="n">MainWindow</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">InitializeComponent</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// ウィンドウをマウスのドラッグで移動できるようにする </span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="n">MouseLeftButtonDown</span> <span class="p">+=</span> <span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="n">DragMove</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fileNamesIndex</span><span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="cm">/* グローバル変数 */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">string</span>   <span class="n">basePath</span><span class="p">;</span>                               <span class="c1">//音楽ファイルを格納しているフォルダのパス</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">fileNames</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>                              <span class="c1">//音楽ファイルの名前</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">bool</span>     <span class="n">isPlaying</span><span class="p">;</span>                              <span class="c1">//再生中かどうかのフラグ 再生/ポーズボタン用のフラグ</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">int</span> <span class="n">fileNamesIndex</span><span class="p">;</span>                              <span class="c1">//fileNamesのindex</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">WaveOut</span> <span class="n">outputDevice</span><span class="p">;</span>                            <span class="c1">//音楽プレイヤー</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">AudioFileReader</span> <span class="n">audioStream</span><span class="p">;</span>                     <span class="c1">//フーリエ変換前の音楽データ</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">readonly</span> <span class="kt">long</span> <span class="n">reciprocal_of_FPS</span> <span class="p">=</span> <span class="m">167000</span><span class="p">;</span>        <span class="c1">//60(fps)の逆数 (100ns)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">float</span><span class="p">[,]</span> <span class="n">result</span><span class="p">;</span>                                 <span class="c1">//フーリエ変換後の音楽データ</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">DispatcherTimer</span> <span class="n">timer</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>                    <span class="c1">//タイマー割り込みに使用するタイマー</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">Line</span><span class="p">[]</span> <span class="n">bar</span><span class="p">;</span>                                      <span class="c1">//音声波形表示に使用するLine(バー)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">Brush</span> <span class="n">brush</span><span class="p">;</span>                                     <span class="c1">//音声波形表示のLine(バー)に使用するブラシ</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">int</span> <span class="n">bytePerSec</span><span class="p">;</span>                                  <span class="c1">//1秒当たりのバイト数</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">int</span> <span class="n">musicLength_s</span><span class="p">;</span>                               <span class="c1">//音楽の長さ (秒)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">int</span> <span class="n">playPosition_s</span><span class="p">;</span>                              <span class="c1">//再生位置 (秒)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">int</span> <span class="n">drawPosition</span><span class="p">;</span>                                <span class="c1">//音声波形表示位置</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">bool</span> <span class="n">barDrawn</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>                           <span class="c1">//描画済みのLine(バー)があるかを示すフラグ (生成済み = true, 未生成 = false)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">DispatcherTimer</span> <span class="n">loopTimer</span><span class="p">=</span> <span class="k">null</span><span class="p">;</span>                 <span class="c1">//音楽再生ループ用タイマ</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">bool</span> <span class="n">isFolderChange</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>                     <span class="c1">//BasePathを変更した直後かどうかを判定するフラグ</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonReturn</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonStartandPause</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">isPlaying</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="cm">/* 再生中のとき =&gt; ポーズ状態へ以降 */</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="n">pauseAudio</span><span class="p">();</span>  <span class="c1">//音楽を一時停止</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;再生&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="cm">/* ポース中のとき =&gt; 再生状態へ以降 */</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="n">startAudio</span><span class="p">();</span>  <span class="c1">//音楽を再生</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;停止&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">loopTimer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">isFolderChange</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">isFolderChange</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonNext</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonBrowser</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* フォルダを選択させる */</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">folderBrowserDialog</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Forms</span><span class="p">.</span><span class="n">FolderBrowserDialog</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">Description</span> <span class="p">=</span> <span class="s">&#34;MP3ファイルを格納しているフォルダーを選択してください。&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">ShowDialog</span><span class="p">()</span> <span class="p">==</span> <span class="n">Forms</span><span class="p">.</span><span class="n">DialogResult</span><span class="p">.</span><span class="n">OK</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">basePath</span> <span class="p">=</span> <span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">SelectedPath</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">textboxBasePath</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">basePath</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">isFolderChange</span><span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="cm">/* OK以外のときはリターンする */</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 選択したパス内のMP3ファイルを取得する */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fileNames</span> <span class="p">=</span> <span class="n">Directory</span><span class="p">.</span><span class="n">GetFiles</span><span class="p">(</span><span class="n">basePath</span><span class="p">,</span> <span class="s">&#34;*.mp3&#34;</span><span class="p">,</span> <span class="n">SearchOption</span><span class="p">.</span><span class="n">AllDirectories</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 音楽を再生する前準備 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">setAudioRender</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">setAudioRender</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">loopTimer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DispatcherTimer</span><span class="p">(</span><span class="n">DispatcherPriority</span><span class="p">.</span><span class="n">Normal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">loopTimer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TimeSpan</span><span class="p">(</span><span class="m">10000000</span><span class="p">);</span> <span class="c1">//停止判定する間隔を1秒</span>
+</span></span><span class="line"><span class="cl">            <span class="n">loopTimer</span><span class="p">.</span><span class="n">Tick</span> <span class="p">+=</span> <span class="k">new</span> <span class="n">EventHandler</span><span class="p">(</span><span class="n">looptimer_tick</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// ファイル名の拡張子によって、異なるストリームを生成</span>
+</span></span><span class="line"><span class="cl">            <span class="n">audioStream</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AudioFileReader</span><span class="p">(</span><span class="n">fileNames</span><span class="p">[</span><span class="n">fileNamesIndex</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// コンストラクタを呼んだ際に、Positionが最後尾に移動したため、0に戻す</span>
+</span></span><span class="line"><span class="cl">            <span class="n">audioStream</span><span class="p">.</span><span class="n">Position</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// プレーヤーの生成</span>
+</span></span><span class="line"><span class="cl">            <span class="n">outputDevice</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WaveOut</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// 音楽ストリームの入力</span>
+</span></span><span class="line"><span class="cl">            <span class="n">outputDevice</span><span class="p">.</span><span class="n">Init</span><span class="p">(</span><span class="n">audioStream</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(!</span><span class="n">isFolderChange</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">loopTimer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">looptimer_tick</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">outputDevice</span><span class="p">.</span><span class="n">PlaybackState</span> <span class="p">==</span> <span class="n">PlaybackState</span><span class="p">.</span><span class="n">Stopped</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">loopTimer</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">updateFileNamesIndex_next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">setAudioRender</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">startAudio</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">updateFileNamesIndex</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">updateFileNamesIndex_next</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fileNamesIndex</span><span class="p">++;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">fileNamesIndex</span> <span class="p">==</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">fileNamesIndex</span><span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">updateFileNamesIndex_random</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">startAudio</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 音楽の再生 (おそらく非同期処理)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">outputDevice</span><span class="p">.</span><span class="n">Play</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">pauseAudio</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//音楽の停止</span>
+</span></span><span class="line"><span class="cl">            <span class="n">outputDevice</span><span class="p">.</span><span class="n">Pause</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="cs">/// &lt;summary&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="cs">/// コンテキストメニューのExitが押されたときのイベントハンドラ</span>
+</span></span><span class="line"><span class="cl">        <span class="cs">/// &lt;/summary&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="cs">/// &lt;param name=&#34;sender&#34;&gt;イベント送信元&lt;/param&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="cs">/// &lt;param name=&#34;e&#34;&gt;イベント引数&lt;/param&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">Quit_Clicked</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Close</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="まとめ">まとめ</h2>
+<p>曲を連続で再生できるように実装しました。<br>
+次回は戻るボタンと送りボタンの実装を行います。<br></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/wpf/">wpf</a>
+        
+            <a href="/tags/c#/">C#</a>
+        
+            <a href="/tags/windows%E3%82%A2%E3%83%97%E3%83%AA/">Windowsアプリ</a>
+        
+            <a href="/tags/gui%E3%83%84%E3%83%BC%E3%83%AB/">GUIツール</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">関連するコンテンツ</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/20230115/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">デスクトップ音楽プレーヤーを作る #1</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "https-oo-esechi-oo-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2023 えせちの作業部屋
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        テーマ <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> は <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> によって設計されています。
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
