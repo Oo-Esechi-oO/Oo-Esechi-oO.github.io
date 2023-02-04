@@ -2,16 +2,16 @@
 <html lang="ja" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='デスクトップ音楽プレーヤー作成記録'>
-<title>デスクトップ音楽プレーヤーを作る #1</title>
+<title>デスクトップ音楽プレーヤーを作る #3</title>
 
-<link rel='canonical' href='https://Oo-Esechi-oO.github.io/p/20230115/'>
+<link rel='canonical' href='https://Oo-Esechi-oO.github.io/p/20230204/'>
 
-<link rel="stylesheet" href="/scss/style.min.a4b80d2ef8cb84c7da62c3254fd754fcbb42f0bb2f1ebc43e8390d10ff6e5c80.css"><meta property='og:title' content='デスクトップ音楽プレーヤーを作る #1'>
+<link rel="stylesheet" href="/scss/style.min.a4b80d2ef8cb84c7da62c3254fd754fcbb42f0bb2f1ebc43e8390d10ff6e5c80.css"><meta property='og:title' content='デスクトップ音楽プレーヤーを作る #3'>
 <meta property='og:description' content='デスクトップ音楽プレーヤー作成記録'>
-<meta property='og:url' content='https://Oo-Esechi-oO.github.io/p/20230115/'>
+<meta property='og:url' content='https://Oo-Esechi-oO.github.io/p/20230204/'>
 <meta property='og:site_name' content='えせちの作業部屋'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='wpf' /><meta property='article:tag' content='C#' /><meta property='article:tag' content='Windowsアプリ' /><meta property='article:tag' content='GUIツール' /><meta property='article:published_time' content='2023-01-15T13:15:57&#43;09:00'/><meta property='article:modified_time' content='2023-01-15T13:15:57&#43;09:00'/>
-<meta name="twitter:title" content="デスクトップ音楽プレーヤーを作る #1">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='wpf' /><meta property='article:tag' content='C#' /><meta property='article:tag' content='Windowsアプリ' /><meta property='article:tag' content='GUIツール' /><meta property='article:published_time' content='2023-02-04T20:45:22&#43;09:00'/><meta property='article:modified_time' content='2023-02-04T20:45:22&#43;09:00'/>
+<meta name="twitter:title" content="デスクトップ音楽プレーヤーを作る #3">
 <meta name="twitter:description" content="デスクトップ音楽プレーヤー作成記録">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR5FCZ2GEP"></script>
 <script>
@@ -229,29 +229,13 @@ if (!doNotTrack) {
             <nav id="TableOfContents">
   <ol>
     <li><a href="#はじめに">はじめに</a></li>
-    <li><a href="#方針構想">方針・構想</a>
+    <li><a href="#前回からの変更">前回からの変更</a></li>
+    <li><a href="#方針構想">方針構想</a></li>
+    <li><a href="#実装">実装</a>
       <ol>
-        <li><a href="#今回作りたいもの">今回作りたいもの</a></li>
-        <li><a href="#事前調査">事前調査</a></li>
-      </ol>
-    </li>
-    <li><a href="#環境構築">環境構築</a>
-      <ol>
-        <li><a href="#visual-studio-2022のインストール">Visual Studio 2022のインストール</a></li>
-        <li><a href="#naudioのインストール">NAudioのインストール</a></li>
-      </ol>
-    </li>
-    <li><a href="#サンプルプログラムを動かしてみる">サンプルプログラムを動かしてみる</a></li>
-    <li><a href="#音楽再生部分の実装">音楽再生部分の実装</a>
-      <ol>
-        <li><a href="#レイアウト">レイアウト</a></li>
-        <li><a href="#機能実装">機能実装</a>
-          <ol>
-            <li><a href="#パス選択部">パス選択部</a></li>
-            <li><a href="#音楽再生の前処理">音楽再生の前処理</a></li>
-            <li><a href="#再生一時停止ボタン">再生/一時停止ボタン</a></li>
-          </ol>
-        </li>
+        <li><a href="#次へボタン">「次へ」ボタン</a></li>
+        <li><a href="#ボタン連打防止">ボタン連打防止</a></li>
+        <li><a href="#再生フォルダのパス変更時の挙動">再生フォルダのパス変更時の挙動</a></li>
       </ol>
     </li>
     <li><a href="#成果物">成果物</a>
@@ -261,7 +245,6 @@ if (!doNotTrack) {
       </ol>
     </li>
     <li><a href="#まとめ">まとめ</a></li>
-    <li><a href="#参考にさせていただいたサイト">参考にさせていただいたサイト</a></li>
   </ol>
 </nav>
         </div>
@@ -289,7 +272,7 @@ if (!doNotTrack) {
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/20230115/">デスクトップ音楽プレーヤーを作る #1</a>
+            <a href="/p/20230204/">デスクトップ音楽プレーヤーを作る #3</a>
         </h2>
     
         
@@ -315,7 +298,7 @@ if (!doNotTrack) {
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jan 15, 2023</time>
+                <time class="article-time--published">Feb 04, 2023</time>
             </div>
         
 
@@ -335,290 +318,20 @@ if (!doNotTrack) {
 <p>今回はPCのデスクトップ上で手軽に扱える音楽プレーヤーの作成を行っていきます。<br>
 Windowsでは音楽の再生ソフトで「メディアプレーヤー」がインストールされています。<br>
 が、音楽ファイルを実行しないと(= 音楽ファイルの場所までいかなと)いけなかったり、使い勝手があんまり好みじゃなかったりするため自作していくことにしました。<br>
+<br>
+このパートでは、「次へ」ボタンの実装と、細かい制御部分の実装を行っていきます。<br>
 <br></p>
-<p>このパートでは、まず音楽ファイルが再生できるところまでを実装していきます。<br>
-<br></p>
-<h2 id="方針構想">方針・構想</h2>
-<h3 id="今回作りたいもの">今回作りたいもの</h3>
-<p>今回作りたい音楽プレーヤーはこんな感じで考えています。<br>
+<h2 id="前回からの変更">前回からの変更</h2>
+<p>今回の内容に入る前に、前回から少しソースを変えた部分があるので簡単にまとめます。<br>
 <br>
-<img src="/p/20230115/img/idea.png" width="80%"><br>
+前回の実装の中で、再生ボタンを押して音楽を再生させると2曲目(2番目に格納されている音楽ファイル)から再生されてしまうという問題がありました。これを防ぐためにフラグ(isFolderChange)を追加し、音楽再生関数startAudio()が2回再生されないように制御していました。<br>
 <br>
-音楽プレーヤー自体はモニターの片隅に置けるくらいの大きさとします。また、PCの起動と同時に音楽プレーヤーも起動がかかるようにし、いつでも再生できるようにします。(これは実装するというよりもWindowsで設定する内容になると思います。)<br>
+これで2番目の音楽ファイルが最初に再生されてしまう問題は解消されましたが、もっと簡単に解消する方法が合ったので、そちらに修正していきます。(フラグでの管理も後々めんどくさくなりそうですし&hellip;)<br>
 <br>
-音楽プレーヤーの表示内容としては、音の波形を表示できるようにして、視覚的にも楽しめるようにします。<br>
+以下はフラグisFolderChangeを使っていた部分のソースです。<br>
+(前回の記事より引用)</p>
 <br>
-UI部分はなるべく小さくし、最小限の機能のみを実装するようにします。</p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>UI名</th>
-<th>機能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>フォルダパス指定</td>
-<td>サブフォルダも含めて、このパス下に格納している音楽ファイルを再生できるようにする。</td>
-</tr>
-<tr>
-<td>戻る/再生/停止/次へ</td>
-<td>音楽を操作するボタン</td>
-</tr>
-<tr>
-<td>カラー指定</td>
-<td>波形表示やボタンの文字色などの色を自分好みに変更できるようにします。</td>
-</tr>
-<tr>
-<td>再生モード</td>
-<td>順番に再生 or ランダム再生</td>
-</tr>
-<tr>
-<td><br></td>
-<td></td>
-</tr>
-</tbody>
-</table></div>
-<p>後は作ってく中で思いついたり、使ってく中で欲しい物を随時付け足していく形で実装していきます。<br>
-<br></p>
-<h3 id="事前調査">事前調査</h3>
-<p>上記の内容が作れるかどうかを調査していきます。<br>
-一番実装が難しいと思われるは音楽のは波形表示ですが、以下の記事ですでに実装されている方がいました。<br>
-<br>
-<a class="link" href="https://qiita.com/takesyhi/items/a0f03447bb893c9ab937"  target="_blank" rel="noopener"
-    >C#で音声波形を表示する音楽プレーヤーを作る</a><br><br></p>
-<p>ほとんどほしい内容が実装されていますね&hellip;。<br>
-ですが、サンプルプログラムはツールの起動で指定された音楽ファイル1曲しか再生されないようになっています。今回は複数の音楽ファイルを順番に再生していくようなをものを作りたいので、このあたりは自分で実装していく必要がありそうです。<br>
-波形の表示は高速フーリエ変換を使って行っているようです。計算自体はライブラリに任せていますが、その計算結果を使って表示の指定を行っているようです。かなり細かく座標など指定しています。<br>
-<br>
-また、ツール自体はWPFで作成されており、NAudioという音楽ファイル操作ライブラリを使用して波形表示や音楽ファイルの操作を行っているようです。<br>
-<br>
-とりあえず作れそうなことはわかりました。<br>
-<br></p>
-<h2 id="環境構築">環境構築</h2>
-<p>以上の内容から、今回の開発環境は以下となります。</p>
-<ul>
-<li><strong>WPF</strong>：Windows GUIツールを作成できる環境</li>
-<li><strong>Visual Studio 2022</strong>：WPFを扱える統合開発環境</li>
-<li><strong>NAudio v2.1.0</strong>：音楽ファイルを操作できるライブラリ</li>
-<li><strong>.NET Framework 4.8</strong>：C#を扱えるようにするためのフレームワーク(Windowsならデフォルトで入ってるはず)</li>
-</ul>
-<h3 id="visual-studio-2022のインストール">Visual Studio 2022のインストール</h3>
-<p>まずはVisual Studioをインストールしていきます。これをインストールすればWPFも扱えるようになります。
-WPFもここで一緒にインストールできます。<br>
-<br>
-以下のサイトからVisualStuidioのインストーラを落としていきます。<br>
-<a class="link" href="https://visualstudio.microsoft.com/ja/downloads/"  target="_blank" rel="noopener"
-    >https://visualstudio.microsoft.com/ja/downloads/</a><br>
-<br>
-Visual Studioには無料版としてCommunityが用意されているのでこれを選びます。<br>
-<img src="/p/20230115/img/VisualStudio.png" width="80%"><br>
-<br>
-インストーラを落としてきたら実行して、表示されている内容を進めていきます。<br>
-<br>
-以下の画面まで来たら、「.NETデスクトップ開発」を選択して次に進みます。<br>
-<img src="/p/20230115/img/wpf_install.png" width="100%"><br>
-<br>
-これがWPFの環境です。他にもいろいろな開発環境がありますが、最低限のものだけ選択します。<br>
-他に必要な環境が出てきたら、インストーラを起動することで後からでも環境を追加することができます。<br>
-<br>
-インストールができたら、プロジェクトを新規作成します。<br>
-(VisualStudioを初めて起動した際に、Microsoftアカウントでのサインインが求められます。)<br>
-<br>
-[新しいプロジェクトの作成]を選択してプロジェクトの設定を行っていきます。<br>
-まずはWPFで開発できるように「WPFアプリ(.NET Framework)」を選択します。<br>
-<img src="/p/20230115/img/new_project1.png" width="90%"><br>
-<br>
-プロジェクト名・作成場所・フレームワークのバージョンを決めて作成します。<br>
-.NET Frameworkのバージョンは4.8としました。<br>
-<img src="/p/20230115/img/new_project2.png" width="90%"><br>
-<br></p>
-<h3 id="naudioのインストール">NAudioのインストール</h3>
-<p>NAudioのインストールもVisualStudio上からできます。<br>
-<br>
-VisualStudioの画面右側の「ソリューションエクスプローラ内」の「参照」を右クリックして「NuGetパッケージの管理」をクリックします。
-<img src="/p/20230115/img/NAudio_install1.png" width="90%"><br>
-<br>
-検索欄に「NAudio」と入力すると見つけることができます。<br>
-選択して「インストール」をクリックします。<br>
-(画像はインストール後のものなので「アンインストール」と表示されています。)<br>
-<img src="/p/20230115/img/NAudio_install2.png" width="90%"><br>
-<br>
-これでusingを使ってNAudioのライブラリを指定すれば利用することができるようになります。<br>
-<br></p>
-<h2 id="サンプルプログラムを動かしてみる">サンプルプログラムを動かしてみる</h2>
-<p>まずは、すでに作成済みの波形表示のプログラムを動かしています。<br>
-サンプルプログラムとして以下のサイトのソースを動かしてみます。(再掲)<br>
-<br>
-<a class="link" href="https://qiita.com/takesyhi/items/a0f03447bb893c9ab937"  target="_blank" rel="noopener"
-    >C#で音声波形を表示する音楽プレーヤーを作る</a><br><br></p>
-<p>そのままでは動かなかったので一部修正します。<br>
-■グローバル変数outputDeviceの宣言(MainWindows.xaml.cs)<br>
-(before)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="cs">/// &lt;summary&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="cs">/// 音楽プレーヤー</span>
-</span></span><span class="line"><span class="cl"><span class="cs">/// &lt;/summary&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">private</span> <span class="n">WaveOutEvent</span> <span class="n">outputDevice</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>(after)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="cs">/// &lt;summary&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="cs">/// 音楽プレーヤー</span>
-</span></span><span class="line"><span class="cl"><span class="cs">/// &lt;/summary&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="k">private</span> <span class="n">WaveOut</span> <span class="n">outputDevice</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>■グローバル変数outputDeviceの初期化(MainWindows.xaml.cs)<br>
-(before)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="c1">// プレーヤーの生成</span>
-</span></span><span class="line"><span class="cl"><span class="n">outputDevice</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WaveOutEvent</span><span class="p">();</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>(after)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="c1">// プレーヤーの生成</span>
-</span></span><span class="line"><span class="cl"><span class="n">outputDevice</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WaveOut</span><span class="p">();</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>■再生する音楽ファイルの指定(MainWindows.xaml.cs)<br>
-(before)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="c1">// 再生するファイル名</span>
-</span></span><span class="line"><span class="cl"><span class="n">fileName</span> <span class="p">=</span> <span class="s">&#34;music\\sample.wav&#34;</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>(after)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="c1">// 再生するファイル名</span>
-</span></span><span class="line"><span class="cl"><span class="n">fileName</span> <span class="p">=</span> <span class="s">&#34;(任意のファイルを指定)&#34;</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>参考サイトが少し古いからでしょうか？NAudioに更新が入ったのか、上記のように修正しないと動きませんでした。<br>
-<img src="/p/20230115/img/sample_src.png" width="90%"><br>
-<br>
-ツールの背景は半透過されてます。常駐するなら邪魔にならなそうです。<br>
-波形の表示の感じは真ん中の方があまり振れていませんが、これで良いのでしょうか&hellip;？
-横軸は周波数？この辺の話に明るくないので、波形が合ってるのかわかりませんが、これをベースに実装していくことにします。<br>
-<br></p>
-<h2 id="音楽再生部分の実装">音楽再生部分の実装</h2>
-<p>まずは、音楽を再生できるようにします。<br>
-<br></p>
-<h3 id="レイアウト">レイアウト</h3>
-<p>サンプルのものから、画面のレイアウトを以下のように変更します。<br>
-<img src="/p/20230115/img/tool_layout.png" width="90%"><br>
-<br>
-下の方にUIの領域を作りました。ボタンなどはデフォルトのデザインなの見た目がいまいちですが、この辺は後で整えていきます。まずは最低限のパス選択部・再生停止ボタンを実装します。<br>
-<br>
-Gridコントロールで領域を分けて、GUIを配置していきます。(全体のソースは後述)<br>
-<br>
-領域分けの例です。<br>
-<br>
-MainWindow.xaml</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;Grid.RowDefinitions&gt;
-</span></span><span class="line"><span class="cl">    &lt;RowDefinition Height=&#34;9*&#34;&gt;&lt;/RowDefinition&gt;
-</span></span><span class="line"><span class="cl">    &lt;RowDefinition Height=&#34;*&#34;&gt;&lt;/RowDefinition&gt;
-</span></span><span class="line"><span class="cl">&lt;/Grid.RowDefinitions&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>上記では波形表示領域とUI領域に分割する記述です。<br>
-画面を縦に9:1の比で分割するように設定しています。<br>
-横に分割する場合はGrid.ColumnDefinitionsで分割できます。<br>
-<br>
-MainWindow.xaml</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;Grid Grid.Row=&#34;0&#34; Name=&#34;gridWaveArea&#34;&gt;
-</span></span><span class="line"><span class="cl">            
-</span></span><span class="line"><span class="cl">&lt;/Grid&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>分割の定義の下に上記のように記述すると、分割した1つの領域にコントロール(GUIパーツ)を配置することができます。この中にはGridコントロールも記述することができます。つまりGridコントロールの入れ子を作ることができます。これにより、細かく構造的にGUIパーツの配置を行うことができます。<br>
-<br>
-MainWindow.xaml</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;Grid Grid.Column=&#34;1&#34; Name=&#34;gridCtrlButtons&#34;&gt;
-</span></span><span class="line"><span class="cl">    &lt;Grid.ColumnDefinitions&gt;
-</span></span><span class="line"><span class="cl">        &lt;ColumnDefinition Width=&#34;*&#34;&gt;&lt;/ColumnDefinition&gt;
-</span></span><span class="line"><span class="cl">        &lt;ColumnDefinition Width=&#34;*&#34;&gt;&lt;/ColumnDefinition&gt;
-</span></span><span class="line"><span class="cl">        &lt;ColumnDefinition Width=&#34;*&#34;&gt;&lt;/ColumnDefinition&gt;
-</span></span><span class="line"><span class="cl">    &lt;/Grid.ColumnDefinitions&gt;
-</span></span><span class="line"><span class="cl">    &lt;Button Grid.Column=&#34;0&#34; Margin=&#34;1&#34; Name=&#34;buttonReturn&#34; Click=&#34;click_buttonReturn&#34;&gt;戻し&lt;/Button&gt;
-</span></span><span class="line"><span class="cl">    &lt;Button Grid.Column=&#34;1&#34; Margin=&#34;1&#34; Name=&#34;buttonStartPause&#34; Click=&#34;click_buttonStartandPause&#34;&gt;再生&lt;/Button&gt;
-</span></span><span class="line"><span class="cl">    &lt;Button Grid.Column=&#34;2&#34; Margin=&#34;1&#34; Name=&#34;buttonNext&#34; Click=&#34;click_buttonNext&#34;&gt;送り&lt;/Button&gt;
-</span></span><span class="line"><span class="cl">&lt;/Grid&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>戻し/再生/送りボタンの部分はこんな感じ。NameプロパティでC#のソース上でボタンを操作することができるようになります。(ボタンを操作するための変数の宣言というイメージ。)また、Clickプロパティはボタンをクリックしたときの動作関数です。ここには関数名を記述して、C#ソース上でこの関数を定義します。<br>
-<br></p>
-<h3 id="機能実装">機能実装</h3>
-<p>C#ソースの方を記述してボタンなどの機能を実装していきます。<br>
-サンプルプログラムで定義されているグローバル変数は予めコピーしてきたものとします。<br>
-<br></p>
-<h4 id="パス選択部">パス選択部</h4>
-<p>「&hellip;」ボタンを押したらフォルダブラウザダイアログを表示して音楽ファイル格納先を選択できるようにします。<br></p>
+▼再生ファイルの格納先を変えたらフラグを立てる。
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -649,7 +362,7 @@ MainWindow.xaml</p>
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonBrowser</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/* フォルダを選択させる */</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">folderBrowserDialog</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Forms</span><span class="p">.</span><span class="n">FolderBrowserDialog</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
@@ -657,103 +370,27 @@ MainWindow.xaml</p>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">ShowDialog</span><span class="p">()</span> <span class="p">==</span> <span class="n">Forms</span><span class="p">.</span><span class="n">DialogResult</span><span class="p">.</span><span class="n">OK</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">         <span class="n">basePath</span> <span class="p">=</span> <span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">SelectedPath</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">basePath</span> <span class="p">=</span> <span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">SelectedPath</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">textboxBasePath</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">basePath</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">isFolderChange</span><span class="p">=</span> <span class="k">true</span><span class="p">;</span>    <span class="cm">/* 追加 */</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">else</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="cm">/* OK以外のときはリターンする */</span>
-</span></span><span class="line"><span class="cl">         <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">     <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 選択したパス内のMP3ファイルを取得する */</span>
 </span></span><span class="line"><span class="cl">    <span class="n">fileNames</span> <span class="p">=</span> <span class="n">Directory</span><span class="p">.</span><span class="n">GetFiles</span><span class="p">(</span><span class="n">basePath</span><span class="p">,</span> <span class="s">&#34;*.mp3&#34;</span><span class="p">,</span> <span class="n">SearchOption</span><span class="p">.</span><span class="n">AllDirectories</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 音楽を再生する前準備 */</span>
-</span></span><span class="line"><span class="cl">     <span class="n">setAudioRender</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"> <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>ダイアログの表示はFormsのFolderBrowserDialogクラスを使用します。<br></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl">    <span class="cm">/* フォルダを選択させる */</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">folderBrowserDialog</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Forms</span><span class="p">.</span><span class="n">FolderBrowserDialog</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">Description</span> <span class="p">=</span> <span class="s">&#34;MP3ファイルを格納しているフォルダーを選択してください。&#34;</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>このクラスは、FormsというWPFとは別の環境で使えるライブラリを利用します。<br>
-Formsを利用するには、ソリューションエクスプローラの「参照」を右クリックし、「参照の追加」を選択します。
-出てきたダイアログ上の検索欄で「Forms」と検索して「System.Windows.Forms」にチェックします。<br></p>
-<p><img src="/p/20230115/img/Forms.png" width="90%"><br>
-<br>
-C#ソース上では以下のように記述して呼び出せるようにします。<br></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Forms</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Forms</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">setAudioRender</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><br>
-フォルダを選んでOKしたときは選択したパスの格納と表示を行います。OKを押さなかったときは何もしません。<br>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">ShowDialog</span><span class="p">()</span> <span class="p">==</span> <span class="n">Forms</span><span class="p">.</span><span class="n">DialogResult</span><span class="p">.</span><span class="n">OK</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">         <span class="n">basePath</span> <span class="p">=</span> <span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">SelectedPath</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">textboxBasePath</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">basePath</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="cm">/* OK以外のときはリターンする */</span>
-</span></span><span class="line"><span class="cl">         <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">     <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>パス選択後はそのフォルダ内に存在するMP3ファイルのファイル名を配列に格納します。<br>
-(GetFilesメソッドの代3引数でサブフォルダの中のMP3ファイルも取得するようにしています。)<br>
-その後、音楽ファイルを再生するための前処理を行う関数をコールします。<br></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="cm">/* 選択したパス内のMP3ファイルを取得する */</span>
-</span></span><span class="line"><span class="cl"><span class="n">fileNames</span> <span class="p">=</span> <span class="n">Directory</span><span class="p">.</span><span class="n">GetFiles</span><span class="p">(</span><span class="n">basePath</span><span class="p">,</span> <span class="s">&#34;*.mp3&#34;</span><span class="p">,</span> <span class="n">SearchOption</span><span class="p">.</span><span class="n">AllDirectories</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="cm">/* 音楽を再生する前準備 */</span>
-</span></span><span class="line"><span class="cl"><span class="n">setAudioRender</span><span class="p">();</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><br>
-<h4 id="音楽再生の前処理">音楽再生の前処理</h4>
-<p>サンプルプログラムの音楽の再生に関わる部分だけ抜き出して関数化しています。<br></p>
+▼音楽ファイル格納先を変更した直後はloopTimerを開始しないようにする。<br>
+(次の音楽を再生するときは実行する。)
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -770,10 +407,21 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">setAudioRender</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loopTimer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DispatcherTimer</span><span class="p">(</span><span class="n">DispatcherPriority</span><span class="p">.</span><span class="n">Normal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loopTimer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TimeSpan</span><span class="p">(</span><span class="m">10000000</span><span class="p">);</span> <span class="c1">//停止判定する間隔を1秒</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loopTimer</span><span class="p">.</span><span class="n">Tick</span> <span class="p">+=</span> <span class="k">new</span> <span class="n">EventHandler</span><span class="p">(</span><span class="n">looptimer_tick</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// ファイル名の拡張子によって、異なるストリームを生成</span>
 </span></span><span class="line"><span class="cl">    <span class="n">audioStream</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AudioFileReader</span><span class="p">(</span><span class="n">fileNames</span><span class="p">[</span><span class="n">fileNamesIndex</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">
@@ -785,13 +433,14 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// 音楽ストリームの入力</span>
 </span></span><span class="line"><span class="cl">    <span class="n">outputDevice</span><span class="p">.</span><span class="n">Init</span><span class="p">(</span><span class="n">audioStream</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!</span><span class="n">isFolderChange</span><span class="p">)</span>  <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loopTimer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>本パートでは実装しませんが、1曲終わる毎に、次の曲再生のためにこの関数を呼び出すような形にします。<br>
-<br></p>
-<h4 id="再生一時停止ボタン">再生/一時停止ボタン</h4>
-<p>再生ボタンと一時停止のボタンは1つのボタンに割り付けてトグル動作できるようにします。<br></p>
+</div><br>
+<p>▼再生ボタンを押したときに追加したフラグを下ろす</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -819,12 +468,17 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonStartandPause</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">isPlaying</span><span class="p">)</span>
@@ -844,26 +498,73 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span><span class="line"><span class="cl">                
 </span></span><span class="line"><span class="cl">        <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;停止&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loopTimer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">isFolderChange</span><span class="p">)</span>    <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">isFolderChange</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>  <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><br>
-<p>MP3ファイルが格納されていないパスが選択されている場合に再生ボタンを押すとエラー終了を起こす可能性があるので例外処理を行っています。</p>
+<p>とりあえず上記で追加した内容は一旦消します。<br>
+そして音楽終了を監視して、終了したら自動再生を行うTimerTickのstartメソッドをStartAudio()に移動させます。<br>
+<br></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">startAudio</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 音楽の再生 (おそらく非同期処理)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">outputDevice</span><span class="p">.</span><span class="n">Play</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loopTimer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>   <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>トグル動作の部分は以下です。<br>
-変数を使って音楽再生中かどうかを状態管理して、再生中のときは一時停止する処理＆表示、一時停止中のときは再生する処理＆表示を行います。状態管理の変数は、グローバル変数として宣言していますが、NAudioに状態を返してくれるプロパティがいるみたいです。もしかしたらそっちで状態管理するように変更するかも&hellip;?<br></p>
+</div><br>
+音楽終了監視用のTimeTickは音楽の再生とともに始めれば良いのでstartAudio()内で開始するようにします。<br>
+<br>
+これによりフラグ管理をしなくても良くなりました。<br>
+また、今回実装する「次へ」ボタンの内部処理も楽になります。<br>
+<br>
+<h2 id="方針構想">方針構想</h2>
+<p>「次へ」ボタンの処理は以下が考えられます。</p>
+<ol>
+<li>現在再生中の音楽を停止する。</li>
+<li>音楽終了監視用のTimeTickを停止する。</li>
+<li>音楽ファイルのパスを格納している配列のインデックスを更新する。</li>
+<li>次に再生する音楽の準備をする。</li>
+<li>音楽と音楽終了監視用のTimeTickを開始する。</li>
+</ol>
+<br>
+この内2.～5.の処理はすでに実装済みと言えます。<br>
+2.～5.の処理は、音楽終了監視用のTimeTick関数loopTimer_tick()で実装されています。<br>
+したがって「次へ」ボタンのイベント関数では、音楽を停止する処理を記載すれば良いということになります。<br>
+音楽を停止することでloopTimer_tick()の処理が実行されることになります。<br>
+<br>
+<br>
+また、「戻る」ボタンについては今回は実装しないこととします。これは音楽を順番に再生するモードとランダムに再生するモードで挙動を変える必要があるためです。(ランダムに再生するモードで戻る機能を実装するには、再生した音楽の順番を記憶しておく必要がある。しかし、実装は面倒なので、ランダムモードでは戻るボタンは無効化しておくことにする。)<br>
+<br>
+<br>
+また細かい内部処理の実装としては以下を実装します。<br>
+<ul>
+<li>ボタンの連打ができないようにする。</li>
+<li>再生する音楽フォルダの格納場所を変更したときは、音楽を停止して再生開始に備える。</li>
+</ul>
+<br>
+<h2 id="実装">実装</h2>
+<h3 id="次へボタン">「次へ」ボタン</h3>
+<p>「次へ」ボタンのイベント関数の実装内容は、上で記載したように音楽の停止処理のみです。音楽を停止、つまりstopped状態にすることでTimeTick関数の処理が実行されます。<br>
+<br>
+▼「次へ」ボタンのイベント関数</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -884,29 +585,42 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="n">isPlaying</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonNext</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* 再生中のとき =&gt; ポーズ状態へ以降 */</span>
-</span></span><span class="line"><span class="cl">                
-</span></span><span class="line"><span class="cl">    <span class="n">pauseAudio</span><span class="p">();</span>  <span class="c1">//音楽を一時停止</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;再生&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">else</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* ポース中のとき =&gt; 再生状態へ以降 */</span>
-</span></span><span class="line"><span class="cl">                
-</span></span><span class="line"><span class="cl">    <span class="n">startAudio</span><span class="p">();</span>  <span class="c1">//音楽を再生</span>
-</span></span><span class="line"><span class="cl">                
-</span></span><span class="line"><span class="cl">    <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;停止&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 連打防止の為にボタンを無効化 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">buttonNext</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>      <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 曲を停止 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">outputDevice</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>    <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 本関数の中では楽曲の停止のみを行う。
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 楽曲を停止することでloopTimer_tick()内の処理が実行され、、
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * looptimer_tickの停止→インデックス更新→setAudioRender()→再生まで行ってくれる。
+</span></span></span><span class="line"><span class="cl"><span class="cm">    */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 連打防止の為にボタンを有効化 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">buttonNext</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>      <span class="cm">/* 追加 */</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>音楽の停止処理と再生処理は以下のように関数化しています。</p>
+</div><p>やってることは11行目の音楽の再生の停止処理だけです。<br>
+また関数の冒頭と末尾にボタンの無効/有効化の処理を入れています。(後述する連打防止処理)<br>
+<br>
+また、一般的な音楽プレーヤーの挙動としては以下のようになっていると思います。</p>
+<ul>
+<li>音楽再生中に「次へ」ボタンを押せば、次の曲に移行し勝手に再生し始める。</li>
+<li>音楽停止/ポーズ中に「次へ」ボタンを押せば、次の曲が再生されるように準備はするが、再生まではしない。</li>
+</ul>
+<br>
+「次へ」ボタンの処理内容は、音楽終了監視用のTimeTick関数を利用しています。この関数の中では、音楽の再生処理まで行っています。よって音楽再生する処理を、現在音楽再生中かどうか判定した上で実行するようにします。<br>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -922,31 +636,102 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">startAudio</span><span class="p">()</span>
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">looptimer_tick</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 音楽の再生 (おそらく非同期処理)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">outputDevice</span><span class="p">.</span><span class="n">Play</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">pauseAudio</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//音楽の停止</span>
-</span></span><span class="line"><span class="cl">    <span class="n">outputDevice</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">outputDevice</span><span class="p">.</span><span class="n">PlaybackState</span> <span class="p">==</span> <span class="n">PlaybackState</span><span class="p">.</span><span class="n">Stopped</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loopTimer</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">updateFileNamesIndex</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setAudioRender</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">isPlaying</span><span class="p">)</span>      <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">startAudio</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>今の時点では関数化する必要は全くありませんが、この後波形表示を実装する際に、音楽の停止と同時に表示も止めれるようにしたいので関数化しています。<br>
-<br></p>
-<h2 id="成果物">成果物</h2>
-<h3 id="動作">動作</h3>
-<p>今回の実装でできあがったものはこんな感じ。<br>
-最初の方は動画に写っていませんが、フォルダブラウザダイアログが立ち上がってフォルダを選択できるようになっています。</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eeynk8o-AXg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<p>ちなみに音源は自作で打ち込んだものを使用しています。<br>
-(UNISON SQUARE GARDENのスノウリバースです。)<br>
-<br></p>
-<h3 id="ソース">ソース</h3>
-<p>■MainWindow.xaml</p>
+</div><h3 id="ボタン連打防止">ボタン連打防止</h3>
+<p>「再生/ポーズ」ボタン、「次へ」ボタン、「戻る」ボタンは、いずれも以下の処理を行います。</p>
+<ul>
+<li>音楽ファイルのパスを管理する配列のインデックスを更新する</li>
+<li>音楽ファイルの再生準備をする。</li>
+<li>音楽を停止したり再生したりする。</li>
+</ul>
+<br>
+また、上記以外に今後波形表示に関する処理も入れることになります。<br>
+そうなると下手にボタン連打されるとバグる可能性があります。<br>
+よって、ボタンのイベント関数の冒頭と末尾にボタンの無効/有効化の処理を追加します。<br>
+これによりイベント関数の処理が始めると関数の処理が終了するまでボタンを押せなくなります。<br>
+<p>▼「次へ」ボタンのイベント関数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonNext</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 連打防止の為にボタンを無効化 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">buttonNext</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>    <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 曲を停止 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">outputDevice</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 本関数の中では楽曲の停止のみを行う。
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 楽曲を停止することでloopTimer_tick()内の処理が実行され、、
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * looptimer_tickの停止→インデックス更新→setAudioRender()→再生まで行ってくれる。
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 連打防止の為にボタンを有効化 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">buttonNext</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>    <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>▼「戻る」ボタンのイベント関数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonReturn</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 連打防止の為にボタンを無効化 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">buttonReturn</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>    <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 連打防止の為にボタンを有効化 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">buttonReturn</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>    <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>▼「再生/ポーズ」ボタンのイベント関数</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -985,79 +770,125 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span><span class="lnt">34
 </span><span class="lnt">35
 </span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="n">Window</span> <span class="n">x</span><span class="p">:</span><span class="n">Class</span><span class="p">=</span><span class="s">&#34;DesktopMusicPlayer.MainWindow&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">xmlns</span><span class="p">=</span><span class="s">&#34;http://schemas.microsoft.com/winfx/2006/xaml/presentation&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">xmlns</span><span class="p">:</span><span class="n">x</span><span class="p">=</span><span class="s">&#34;http://schemas.microsoft.com/winfx/2006/xaml&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">xmlns</span><span class="p">:</span><span class="n">d</span><span class="p">=</span><span class="s">&#34;http://schemas.microsoft.com/expression/blend/2008&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">xmlns</span><span class="p">:</span><span class="n">mc</span><span class="p">=</span><span class="s">&#34;http://schemas.openxmlformats.org/markup-compatibility/2006&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">xmlns</span><span class="p">:</span><span class="n">local</span><span class="p">=</span><span class="s">&#34;clr-namespace:DesktopMusicPlayer&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">mc</span><span class="p">:</span><span class="n">Ignorable</span><span class="p">=</span><span class="s">&#34;d&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Title</span><span class="p">=</span><span class="s">&#34;MainWindow&#34;</span> <span class="n">Height</span><span class="p">=</span><span class="s">&#34;450&#34;</span> <span class="n">Width</span><span class="p">=</span><span class="s">&#34;800&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">AllowsTransparency</span><span class="p">=</span><span class="s">&#34;True&#34;</span> 
-</span></span><span class="line"><span class="cl">        <span class="n">Background</span><span class="p">=</span><span class="s">&#34;#80000024&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">WindowStyle</span><span class="p">=</span><span class="s">&#34;None&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="n">Window</span><span class="p">.</span><span class="n">ContextMenu</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="n">ContextMenu</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="n">MenuItem</span> <span class="n">Header</span><span class="p">=</span><span class="s">&#34;Exit&#34;</span> <span class="n">Click</span><span class="p">=</span><span class="s">&#34;Quit_Clicked&#34;</span><span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="n">ContextMenu</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="n">Window</span><span class="p">.</span><span class="n">ContextMenu</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="n">Grid</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="n">Grid</span><span class="p">.</span><span class="n">RowDefinitions</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="n">RowDefinition</span> <span class="n">Height</span><span class="p">=</span><span class="s">&#34;9*&#34;</span><span class="p">&gt;&lt;/</span><span class="n">RowDefinition</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="n">RowDefinition</span> <span class="n">Height</span><span class="p">=</span><span class="s">&#34;*&#34;</span><span class="p">&gt;&lt;/</span><span class="n">RowDefinition</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="n">Grid</span><span class="p">.</span><span class="n">RowDefinitions</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="n">Grid</span> <span class="n">Grid</span><span class="p">.</span><span class="n">Row</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="n">Name</span><span class="p">=</span><span class="s">&#34;gridWaveArea&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="n">Grid</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="n">Grid</span> <span class="n">Grid</span><span class="p">.</span><span class="n">Row</span><span class="p">=</span><span class="s">&#34;1&#34;</span> <span class="n">Name</span><span class="p">=</span><span class="s">&#34;gridUiArea&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="n">Grid</span><span class="p">.</span><span class="n">ColumnDefinitions</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="n">ColumnDefinition</span> <span class="n">Width</span><span class="p">=</span><span class="s">&#34;3*&#34;</span><span class="p">&gt;&lt;/</span><span class="n">ColumnDefinition</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="n">ColumnDefinition</span> <span class="n">Width</span><span class="p">=</span><span class="s">&#34;*&#34;</span><span class="p">&gt;&lt;/</span><span class="n">ColumnDefinition</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="n">Grid</span><span class="p">.</span><span class="n">ColumnDefinitions</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="n">Grid</span> <span class="n">Grid</span><span class="p">.</span><span class="n">Column</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="n">Name</span><span class="p">=</span><span class="s">&#34;gridBasePathInput&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="n">Grid</span><span class="p">.</span><span class="n">ColumnDefinitions</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="n">ColumnDefinition</span> <span class="n">Width</span><span class="p">=</span><span class="s">&#34;*&#34;</span><span class="p">&gt;&lt;/</span><span class="n">ColumnDefinition</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="n">ColumnDefinition</span> <span class="n">Width</span><span class="p">=</span><span class="s">&#34;3*&#34;</span><span class="p">&gt;&lt;/</span><span class="n">ColumnDefinition</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="n">ColumnDefinition</span> <span class="n">Width</span><span class="p">=</span><span class="s">&#34;*&#34;</span><span class="p">&gt;&lt;/</span><span class="n">ColumnDefinition</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="n">Grid</span><span class="p">.</span><span class="n">ColumnDefinitions</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="n">TextBlock</span> <span class="n">Grid</span><span class="p">.</span><span class="n">Column</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="n">Foreground</span><span class="p">=</span><span class="s">&#34;white&#34;</span> <span class="n">HorizontalAlignment</span><span class="p">=</span><span class="s">&#34;Center&#34;</span> <span class="n">VerticalAlignment</span><span class="p">=</span><span class="s">&#34;Center&#34;</span><span class="p">&gt;</span><span class="n">BasePath</span><span class="p">&lt;/</span><span class="n">TextBlock</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="n">TextBox</span> <span class="n">Grid</span><span class="p">.</span><span class="n">Column</span><span class="p">=</span><span class="s">&#34;1&#34;</span> <span class="n">Margin</span><span class="p">=</span><span class="s">&#34;1&#34;</span> <span class="n">IsReadOnly</span><span class="p">=</span><span class="s">&#34;True&#34;</span> <span class="n">Name</span><span class="p">=</span><span class="s">&#34;textboxBasePath&#34;</span><span class="p">&gt;&lt;/</span><span class="n">TextBox</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="n">Button</span> <span class="n">Grid</span><span class="p">.</span><span class="n">Column</span><span class="p">=</span><span class="s">&#34;2&#34;</span> <span class="n">Margin</span><span class="p">=</span><span class="s">&#34;1&#34;</span> <span class="n">Name</span><span class="p">=</span><span class="s">&#34;buttonBrowser&#34;</span> <span class="n">Click</span><span class="p">=</span><span class="s">&#34;click_buttonBrowser&#34;</span><span class="p">&gt;...&lt;/</span><span class="n">Button</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="n">Grid</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="n">Grid</span> <span class="n">Grid</span><span class="p">.</span><span class="n">Column</span><span class="p">=</span><span class="s">&#34;1&#34;</span> <span class="n">Name</span><span class="p">=</span><span class="s">&#34;gridCtrlButtons&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="n">Grid</span><span class="p">.</span><span class="n">ColumnDefinitions</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="n">ColumnDefinition</span> <span class="n">Width</span><span class="p">=</span><span class="s">&#34;*&#34;</span><span class="p">&gt;&lt;/</span><span class="n">ColumnDefinition</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="n">ColumnDefinition</span> <span class="n">Width</span><span class="p">=</span><span class="s">&#34;*&#34;</span><span class="p">&gt;&lt;/</span><span class="n">ColumnDefinition</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                    <span class="p">&lt;</span><span class="n">ColumnDefinition</span> <span class="n">Width</span><span class="p">=</span><span class="s">&#34;*&#34;</span><span class="p">&gt;&lt;/</span><span class="n">ColumnDefinition</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;/</span><span class="n">Grid</span><span class="p">.</span><span class="n">ColumnDefinitions</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="n">Button</span> <span class="n">Grid</span><span class="p">.</span><span class="n">Column</span><span class="p">=</span><span class="s">&#34;0&#34;</span> <span class="n">Margin</span><span class="p">=</span><span class="s">&#34;1&#34;</span> <span class="n">Name</span><span class="p">=</span><span class="s">&#34;buttonReturn&#34;</span> <span class="n">Click</span><span class="p">=</span><span class="s">&#34;click_buttonReturn&#34;</span><span class="p">&gt;</span><span class="err">戻し</span><span class="p">&lt;/</span><span class="n">Button</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="n">Button</span> <span class="n">Grid</span><span class="p">.</span><span class="n">Column</span><span class="p">=</span><span class="s">&#34;1&#34;</span> <span class="n">Margin</span><span class="p">=</span><span class="s">&#34;1&#34;</span> <span class="n">Name</span><span class="p">=</span><span class="s">&#34;buttonStartPause&#34;</span> <span class="n">Click</span><span class="p">=</span><span class="s">&#34;click_buttonStartandPause&#34;</span><span class="p">&gt;</span><span class="err">再生</span><span class="p">&lt;/</span><span class="n">Button</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="n">Button</span> <span class="n">Grid</span><span class="p">.</span><span class="n">Column</span><span class="p">=</span><span class="s">&#34;2&#34;</span> <span class="n">Margin</span><span class="p">=</span><span class="s">&#34;1&#34;</span> <span class="n">Name</span><span class="p">=</span><span class="s">&#34;buttonNext&#34;</span> <span class="n">Click</span><span class="p">=</span><span class="s">&#34;click_buttonNext&#34;</span><span class="p">&gt;</span><span class="err">送り</span><span class="p">&lt;/</span><span class="n">Button</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="n">Grid</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="n">Grid</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="n">Grid</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="n">Window</span><span class="p">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonStartandPause</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 連打防止の為にボタンを無効化 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>    <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">isPlaying</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 再生中のとき =&gt; ポーズ状態へ以降 */</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">        <span class="n">pauseAudio</span><span class="p">();</span>  <span class="c1">//音楽を一時停止</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;再生&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* ポース中のとき =&gt; 再生状態へ以降 */</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">        <span class="n">startAudio</span><span class="p">();</span>  <span class="c1">//音楽を再生</span>
+</span></span><span class="line"><span class="cl">             
+</span></span><span class="line"><span class="cl">        <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;停止&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//loopTimer.Start();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//if (isFolderChange)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//    isFolderChange = false;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 連打防止の為にボタンを有効化 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>    <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>■Mainwindow.xaml.cs</p>
+</div><br>
+<h3 id="再生フォルダのパス変更時の挙動">再生フォルダのパス変更時の挙動</h3>
+<p>音楽再生中に再生する音楽のフォルダを変更した場合、予期せぬ挙動を行ってしまう可能性があります。<br>
+例えば変更前のフォルダより変更後のフォルダの音楽ファイル数が少なかった場合、パスを管理している配列のインデックス更新時に配列外アクセスしてしまう可能性があります。<br>
+<br>
+<img src="/p/20230204/img/配列.png" width="80%">
+<br></p>
+<p>これを防ぐためにフォルダのパスが変更されたら音楽やTimeTickを停止して、プレーヤーの内部状態(再生状態とボタンの表示)を起動時の状態に戻します。これらの処理は音楽再生中にフォルダを変更したときのみ実行するようにします。<br></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonBrowser</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* フォルダを選択させる */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">folderBrowserDialog</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Forms</span><span class="p">.</span><span class="n">FolderBrowserDialog</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">Description</span> <span class="p">=</span> <span class="s">&#34;MP3ファイルを格納しているフォルダーを選択してください。&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">ShowDialog</span><span class="p">()</span> <span class="p">==</span> <span class="n">Forms</span><span class="p">.</span><span class="n">DialogResult</span><span class="p">.</span><span class="n">OK</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">basePath</span> <span class="p">=</span> <span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">SelectedPath</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">textboxBasePath</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">basePath</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//isFolderChange= true;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fileNamesIndex</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">isPlaying</span><span class="p">)</span>                                                   <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 再生中の場合は楽曲を停止してUIを初期状態に戻す */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">loopTimer</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>      <span class="c1">//自動再生監視用のTimerTickを先に停止  /* 追加 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">outputDevice</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>   <span class="c1">//楽曲を停止                          /* 追加 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">isPlaying</span><span class="p">=</span> <span class="k">false</span><span class="p">;</span>                                           <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;再生&#34;</span><span class="p">;</span>                          <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* OK以外のときはリターンする */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 選択したパス内のMP3ファイルを取得する */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fileNames</span> <span class="p">=</span> <span class="n">Directory</span><span class="p">.</span><span class="n">GetFiles</span><span class="p">(</span><span class="n">basePath</span><span class="p">,</span> <span class="s">&#34;*.mp3&#34;</span><span class="p">,</span> <span class="n">SearchOption</span><span class="p">.</span><span class="n">AllDirectories</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 音楽を再生する前準備 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">setAudioRender</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="成果物">成果物</h2>
+<h3 id="動作">動作</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3AZLnf8uoOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<h3 id="ソース">ソース</h3>
+<p>▼MainWindow.xaml.cs</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">  1
@@ -1226,6 +1057,90 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span><span class="lnt">164
 </span><span class="lnt">165
 </span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
@@ -1270,10 +1185,10 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="cm">/* グローバル変数 */</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">string</span>   <span class="n">basePath</span><span class="p">;</span>                               <span class="c1">//音楽ファイルを格納しているフォルダのパス</span>
-</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">fileNames</span><span class="p">;</span>                              <span class="c1">//音楽ファイルの名前</span>
-</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">bool</span>     <span class="n">isPlaying</span><span class="p">;</span>                              <span class="c1">//再生中かどうかのフラグ</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">fileNames</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>                              <span class="c1">//音楽ファイルの名前</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">bool</span>     <span class="n">isPlaying</span><span class="p">;</span>                              <span class="c1">//再生中かどうかのフラグ 再生/ポーズボタン用のフラグ</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">int</span> <span class="n">fileNamesIndex</span><span class="p">;</span>                              <span class="c1">//fileNamesのindex</span>
-</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">WaveOut</span> <span class="n">outputDevice</span><span class="p">;</span>                            <span class="c1">//音楽プレーヤー</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">WaveOut</span> <span class="n">outputDevice</span><span class="p">;</span>                            <span class="c1">//音楽プレイヤー</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">AudioFileReader</span> <span class="n">audioStream</span><span class="p">;</span>                     <span class="c1">//フーリエ変換前の音楽データ</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">readonly</span> <span class="kt">long</span> <span class="n">reciprocal_of_FPS</span> <span class="p">=</span> <span class="m">167000</span><span class="p">;</span>        <span class="c1">//60(fps)の逆数 (100ns)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">float</span><span class="p">[,]</span> <span class="n">result</span><span class="p">;</span>                                 <span class="c1">//フーリエ変換後の音楽データ</span>
@@ -1285,22 +1200,35 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">int</span> <span class="n">playPosition_s</span><span class="p">;</span>                              <span class="c1">//再生位置 (秒)</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">int</span> <span class="n">drawPosition</span><span class="p">;</span>                                <span class="c1">//音声波形表示位置</span>
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="kt">bool</span> <span class="n">barDrawn</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>                           <span class="c1">//描画済みのLine(バー)があるかを示すフラグ (生成済み = true, 未生成 = false)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="n">DispatcherTimer</span> <span class="n">loopTimer</span><span class="p">=</span> <span class="k">null</span><span class="p">;</span>                 <span class="c1">//音楽再生ループ用タイマ</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//private bool isFolderChange = false;                     //BasePathを変更した直後かどうかを判定するフラグ</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonReturn</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 連打防止の為にボタンを無効化 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">buttonReturn</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 連打防止の為にボタンを有効化 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">buttonReturn</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonStartandPause</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">isPlaying</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 連打防止の為にボタンを無効化 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">isPlaying</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="cm">/* 再生中のとき =&gt; ポーズ状態へ以降 */</span>
 </span></span><span class="line"><span class="cl">                
@@ -1317,14 +1245,37 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span><span class="line"><span class="cl">                
 </span></span><span class="line"><span class="cl">                <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;停止&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                <span class="n">isPlaying</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//loopTimer.Start();</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//if (isFolderChange)</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//    isFolderChange = false;</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//}</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 連打防止の為にボタンを有効化 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonNext</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 連打防止の為にボタンを無効化 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">buttonNext</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 曲を停止 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">outputDevice</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 本関数の中では楽曲の停止のみを行う。
+</span></span></span><span class="line"><span class="cl"><span class="cm">             * 楽曲を停止することでloopTimer_tick()内の処理が実行され、、
+</span></span></span><span class="line"><span class="cl"><span class="cm">             * looptimer_tickの停止→インデックス更新→setAudioRender()→再生まで行ってくれる。
+</span></span></span><span class="line"><span class="cl"><span class="cm">             */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="cm">/* 連打防止の為にボタンを有効化 */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">buttonNext</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonBrowser</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
@@ -1338,6 +1289,15 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
 </span></span><span class="line"><span class="cl">                <span class="n">basePath</span> <span class="p">=</span> <span class="n">folderBrowserDialog</span><span class="p">.</span><span class="n">SelectedPath</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">                <span class="n">textboxBasePath</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">basePath</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//isFolderChange= true;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="p">(</span><span class="n">isPlaying</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="cm">/* 再生中の場合は楽曲を停止してUIを初期状態に戻す */</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">loopTimer</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>      <span class="c1">//自動再生監視用のTimerTickを先に停止</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">outputDevice</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>   <span class="c1">//楽曲を停止</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">isPlaying</span><span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">buttonStartPause</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;再生&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
 </span></span><span class="line"><span class="cl">            <span class="p">}</span>
 </span></span><span class="line"><span class="cl">            <span class="k">else</span>
 </span></span><span class="line"><span class="cl">            <span class="p">{</span>
@@ -1355,6 +1315,10 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">setAudioRender</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">loopTimer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DispatcherTimer</span><span class="p">(</span><span class="n">DispatcherPriority</span><span class="p">.</span><span class="n">Normal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">loopTimer</span><span class="p">.</span><span class="n">Interval</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TimeSpan</span><span class="p">(</span><span class="m">10000000</span><span class="p">);</span> <span class="c1">//停止判定する間隔を1秒</span>
+</span></span><span class="line"><span class="cl">            <span class="n">loopTimer</span><span class="p">.</span><span class="n">Tick</span> <span class="p">+=</span> <span class="k">new</span> <span class="n">EventHandler</span><span class="p">(</span><span class="n">looptimer_tick</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">            <span class="c1">// ファイル名の拡張子によって、異なるストリームを生成</span>
 </span></span><span class="line"><span class="cl">            <span class="n">audioStream</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AudioFileReader</span><span class="p">(</span><span class="n">fileNames</span><span class="p">[</span><span class="n">fileNamesIndex</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl">
@@ -1367,6 +1331,40 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span><span class="line"><span class="cl">            <span class="c1">// 音楽ストリームの入力</span>
 </span></span><span class="line"><span class="cl">            <span class="n">outputDevice</span><span class="p">.</span><span class="n">Init</span><span class="p">(</span><span class="n">audioStream</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">//if (!isFolderChange)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//    loopTimer.Start();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">looptimer_tick</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">outputDevice</span><span class="p">.</span><span class="n">PlaybackState</span> <span class="p">==</span> <span class="n">PlaybackState</span><span class="p">.</span><span class="n">Stopped</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">loopTimer</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">updateFileNamesIndex</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">setAudioRender</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="p">(</span><span class="n">isPlaying</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">startAudio</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">updateFileNamesIndex</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">updateFileNamesIndex_next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">updateFileNamesIndex_next</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fileNamesIndex</span><span class="p">++;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">fileNamesIndex</span> <span class="p">==</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">fileNamesIndex</span><span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">updateFileNamesIndex_random</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
@@ -1374,12 +1372,13 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="c1">// 音楽の再生 (おそらく非同期処理)</span>
 </span></span><span class="line"><span class="cl">            <span class="n">outputDevice</span><span class="p">.</span><span class="n">Play</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">loopTimer</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="k">private</span> <span class="k">void</span> <span class="n">pauseAudio</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">            <span class="c1">//音楽の停止</span>
-</span></span><span class="line"><span class="cl">            <span class="n">outputDevice</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">outputDevice</span><span class="p">.</span><span class="n">Pause</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
@@ -1397,16 +1396,9 @@ C#ソース上では以下のように記述して呼び出せるようにしま
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="まとめ">まとめ</h2>
-<p>今回は自作のデスクトップ音楽プレーヤーを作るということで、サンプルプログラムをもとに音楽を再生する部分を実装しました。次回は1曲終了後にループできるように実装します。</p>
-<h2 id="参考にさせていただいたサイト">参考にさせていただいたサイト</h2>
-<ul>
-<li><a class="link" href="https://qiita.com/takesyhi/items/a0f03447bb893c9ab937"  target="_blank" rel="noopener"
-    >C#で音声波形を表示する音楽プレーヤーを作る(Qiita)</a></li>
-<li><a class="link" href="https://invisiblepotato.com/programming09/"  target="_blank" rel="noopener"
-    >【初心者向け】Visual Studio 2022を無料インストールする手順(おとといからきたいも)</a></li>
-<li><a class="link" href="https://tomosoft.jp/design/?p=42227"  target="_blank" rel="noopener"
-    >NAudioを使って試験波形のWave形式録音(TomoSoft)</a></li>
-</ul>
+<p>今回は「次へ」ボタンで次の音楽を再生できるようにしました。<br>
+また、細かい内部的な処理の追加を行いました。(かなり地味な内容になってしまった&hellip;)<br>
+次回はいよいよ波形表示を実装していきたいと思います！<br></p>
 
 </section>
 
@@ -1478,12 +1470,12 @@ C#ソース上では以下のように記述して呼び出せるようにしま
             
                 
 <article class="">
-    <a href="/p/20230204/">
+    <a href="/p/20230121/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">デスクトップ音楽プレーヤーを作る #3</h2>
+            <h2 class="article-title">デスクトップ音楽プレーヤーを作る #2</h2>
         </div>
     </a>
 </article>
@@ -1491,12 +1483,12 @@ C#ソース上では以下のように記述して呼び出せるようにしま
             
                 
 <article class="">
-    <a href="/p/20230121/">
+    <a href="/p/20230115/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">デスクトップ音楽プレーヤーを作る #2</h2>
+            <h2 class="article-title">デスクトップ音楽プレーヤーを作る #1</h2>
         </div>
     </a>
 </article>
