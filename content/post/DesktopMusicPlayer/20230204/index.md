@@ -248,14 +248,18 @@ private void click_buttonNext(object sender, RoutedEventArgs e)
     /* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */
     if (fileNames == null || fileNames.Length == 0)
     { return; }
+    
     /* 連打防止の為にボタンを無効化 */
     buttonNext.IsEnabled = false;    /* 追加 */
+    
     /* 曲を停止 */
     outputDevice.Stop();
+    
     /* 本関数の中では楽曲の停止のみを行う。
      * 楽曲を停止することでloopTimer_tick()内の処理が実行され、、
      * looptimer_tickの停止→インデックス更新→setAudioRender()→再生まで行ってくれる。
      */
+    
     /* 連打防止の為にボタンを有効化 */
     buttonNext.IsEnabled = true;    /* 追加 */
 }
