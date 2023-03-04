@@ -680,6 +680,10 @@ Windowsでは音楽の再生ソフトで「メディアプレーヤー」がイ�
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="k">private</span> <span class="k">void</span> <span class="n">click_buttonNext</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
@@ -687,14 +691,18 @@ Windowsでは音楽の再生ソフトで「メディアプレーヤー」がイ�
 </span></span><span class="line"><span class="cl">    <span class="cm">/* BasePath未入力 or MP3ファイルのないパスを選択した場合は何もしない */</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">fileNames</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">fileNames</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 連打防止の為にボタンを無効化 */</span>
 </span></span><span class="line"><span class="cl">    <span class="n">buttonNext</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>    <span class="cm">/* 追加 */</span>
+</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 曲を停止 */</span>
 </span></span><span class="line"><span class="cl">    <span class="n">outputDevice</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 本関数の中では楽曲の停止のみを行う。
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * 楽曲を停止することでloopTimer_tick()内の処理が実行され、、
 </span></span></span><span class="line"><span class="cl"><span class="cm">     * looptimer_tickの停止→インデックス更新→setAudioRender()→再生まで行ってくれる。
 </span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 連打防止の為にボタンを有効化 */</span>
 </span></span><span class="line"><span class="cl">    <span class="n">buttonNext</span><span class="p">.</span><span class="n">IsEnabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>    <span class="cm">/* 追加 */</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
@@ -1467,6 +1475,19 @@ Windowsでは音楽の再生ソフトで「メディアプレーヤー」がイ�
     <h2 class="section-title">関連するコンテンツ</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/20230304/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">デスクトップ音楽プレーヤーを作る #5</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">
